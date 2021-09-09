@@ -1,0 +1,144 @@
+
+:root {
+    min-width: 960px;
+    text-align: center;
+}
+
+
+header {
+    font-size: 60px;
+    text-align: center;
+    color:rgb(75, 44, 44);
+    font-family: 'Teko', sans-serif;
+    margin:0;
+    
+}
+
+h1 {
+    margin: 0;
+}
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    margin: 30px;
+    background-color: blanchedalmond;
+    
+}
+
+img { 
+    transform: rotate(90deg);
+    width: 20%;
+}
+
+#classSchedule {
+    border: 10px solid black;
+    position:relative;
+    width:500px;
+    margin: 0 auto;
+
+    
+}
+
+th, td {
+    border: 1px double black;
+    position: inherit;
+}
+
+#personalInfo {
+    border: 10px solid black;
+    padding: 10px;
+    margin: 20px auto;
+    
+}
+
+ul li {
+    padding: 4px;
+
+}
+
+ul {
+    padding-left: 20px;
+    list-style: none;
+}
+
+ol {
+    list-style: none;
+}
+
+#tableHead {
+    border-bottom: 1px solid black;
+}
+
+
+#favoriteBooks {
+    border: 10px solid black;
+    margin: 20px auto;
+}
+
+#booksHeader {
+    text-align:center;
+}
+
+#poem {
+    border: 10px solid black;
+    margin: 20px auto;
+
+}
+
+#personalInterests {
+    border: 10px solid black;
+    text-indent: 50px;
+    margin: 20px auto;
+    font-family: 'Space Mono', monospace;
+}
+
+#dedicate {
+    font-style: italic;
+    font-family:'Times New Roman', Times, serif;
+    margin:0;
+}
+
+span {
+    font-family: 'Caveat', cursive;
+}
+
+.AmericanSocialDance {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.English2010 {
+    font-family:Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Homework {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic;
+
+}
+.CS2550 {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+
+}
+.SnackBreak {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+.CS2370 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.Work {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
+    text-decoration: underline double;
+}
+
+#poem p {
+    margin:5px;
+}
