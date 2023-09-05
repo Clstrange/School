@@ -1,0 +1,4 @@
+﻿  Project_six.cpp
+D:\CS 2370\Project_six\Project_six\Project_six.cpp(62,35): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\CS 2370\Project_six\Project_six\Project_six.cpp(93,23): warning C4018: '<': signed/unsigned mismatch
+  Project_six.vcxproj -> D:\CS 2370\Project_six\Debug\Project_six.exe

@@ -1,0 +1,11 @@
+President,Affiliation ,Years Served
+John F. Kennedy ,Democratic,2
+Lyndon B. Johnson,Democratic,6
+Richard Nixon,Republican,5
+Gerald Ford,Republican,3
+Jimmy Carter,Democratic,4
+Ronald Reagan,Republican,8
+George H. W. Bush,Republican,4
+Bill Clinton,Democratic,8
+George W. Bush,Republican,8
+Barack Obama,Democratic,4

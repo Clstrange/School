@@ -1,0 +1,5 @@
+﻿  groceries.cpp
+D:\School\CS 2370\groceries\groceries\groceries.cpp(81,23): warning C4018: '<': signed/unsigned mismatch
+D:\School\CS 2370\groceries\groceries\groceries.cpp(137,23): warning C4018: '<': signed/unsigned mismatch
+D:\School\CS 2370\groceries\groceries\groceries.cpp(332,31): warning C4018: '<': signed/unsigned mismatch
+  groceries.vcxproj -> D:\School\CS 2370\groceries\Debug\groceries.exe

@@ -1,0 +1,8 @@
+﻿  Project_six.cpp
+D:\School\CS 2370\Project_six\Project_six\Project_six.cpp(62,35): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\School\CS 2370\Project_six\Project_six\Project_six.cpp(63,57): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Project_six.vcxproj -> D:\School\CS 2370\Project_six\x64\Debug\Project_six.exe

@@ -1,0 +1,21 @@
+﻿  testVector.cpp
+testVector.obj : error LNK2019: unresolved external symbol "public: __thiscall Vector<int>::Vector<int>(void)" (??0?$Vector@H@@QAE@XZ) referenced in function _main
+testVector.obj : error LNK2019: unresolved external symbol "public: __thiscall Vector<int>::Vector<int>(class Vector<int> const &)" (??0?$Vector@H@@QAE@ABV0@@Z) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: class Vector<int> & __thiscall Vector<int>::operator=(class Vector<int> const &)" (??4?$Vector@H@@QAEAAV0@ABV0@@Z) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: __thiscall Vector<int>::~Vector<int>(void)" (??1?$Vector@H@@QAE@XZ) referenced in function __catch$_main$28
+testVector.obj : error LNK2019: unresolved external symbol "public: int __thiscall Vector<int>::front(void)const " (?front@?$Vector@H@@QBEHXZ) referenced in function __catch$_main$7
+testVector.obj : error LNK2019: unresolved external symbol "public: int __thiscall Vector<int>::back(void)const " (?back@?$Vector@H@@QBEHXZ) referenced in function __catch$_main$10
+testVector.obj : error LNK2019: unresolved external symbol "public: int __thiscall Vector<int>::at(unsigned int)const " (?at@?$Vector@H@@QBEHI@Z) referenced in function _main
+testVector.obj : error LNK2019: unresolved external symbol "public: unsigned int __thiscall Vector<int>::size(void)const " (?size@?$Vector@H@@QBEIXZ) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: bool __thiscall Vector<int>::empty(void)const " (?empty@?$Vector@H@@QBE_NXZ) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: int & __thiscall Vector<int>::operator[](unsigned int)" (??A?$Vector@H@@QAEAAHI@Z) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vector<int>::push_back(int)" (?push_back@?$Vector@H@@QAEXH@Z) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vector<int>::pop_back(void)" (?pop_back@?$Vector@H@@QAEXXZ) referenced in function __catch$_main$1
+testVector.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vector<int>::erase(unsigned int)" (?erase@?$Vector@H@@QAEXI@Z) referenced in function __catch$_main$4
+testVector.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vector<int>::insert(unsigned int,int)" (?insert@?$Vector@H@@QAEXIH@Z) referenced in function __catch$_main$28
+testVector.obj : error LNK2019: unresolved external symbol "public: void __thiscall Vector<int>::clear(void)" (?clear@?$Vector@H@@QAEXXZ) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: int * __thiscall Vector<int>::begin(void)" (?begin@?$Vector@H@@QAEPAHXZ) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: int * __thiscall Vector<int>::end(void)" (?end@?$Vector@H@@QAEPAHXZ) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: bool __thiscall Vector<int>::operator==(class Vector<int> const &)const " (??8?$Vector@H@@QBE_NABV0@@Z) referenced in function __catch$_main$13
+testVector.obj : error LNK2019: unresolved external symbol "public: bool __thiscall Vector<int>::operator!=(class Vector<int> const &)const " (??9?$Vector@H@@QBE_NABV0@@Z) referenced in function __catch$_main$28
+D:\CS 2370\Lab_vector\Debug\Lab_vector.exe : fatal error LNK1120: 19 unresolved externals

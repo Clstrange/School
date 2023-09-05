@@ -1,0 +1,3 @@
+﻿  Lab_3.33.cpp
+D:\CS 2370\Lab_3.33\Lab_3.33\Lab_3.33.cpp(19,41): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
+  Lab_3.33.vcxproj -> D:\CS 2370\Lab_3.33\x64\Debug\Lab_3.33.exe

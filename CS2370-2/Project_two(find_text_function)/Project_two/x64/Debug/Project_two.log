@@ -1,0 +1,3 @@
+﻿  Project_two.cpp
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(28,52): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Project_two.vcxproj -> D:\CS 2370\Project_two\x64\Debug\Project_two.exe

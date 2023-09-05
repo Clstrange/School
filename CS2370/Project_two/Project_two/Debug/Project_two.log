@@ -1,0 +1,9 @@
+﻿  Project_two.cpp
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(24,20): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(66,21): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(85,20): warning C4018: '<': signed/unsigned mismatch
+D:\CS 2370\Project_two\Project_two\Project_two.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+  Project_two.vcxproj -> D:\CS 2370\Project_two\Debug\Project_two.exe

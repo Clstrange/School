@@ -1,0 +1,3 @@
+﻿  TEST_2.cpp
+D:\CS 2370\TEST_2\TEST_2\TEST_2.cpp(10,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  TEST_2.vcxproj -> D:\CS 2370\TEST_2\x64\Debug\TEST_2.exe

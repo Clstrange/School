@@ -1,0 +1,3 @@
+﻿  Project_One.cpp
+D:\CS 2370\Project_One\Project_One\Project_One.cpp(18,6): warning C4101: 'playerNumTwo': unreferenced local variable
+  Project_One.vcxproj -> D:\CS 2370\Project_One\Debug\Project_One.exe
