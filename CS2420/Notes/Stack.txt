@@ -1,0 +1,9 @@
+Queue: FIF structure: First In, First Out
+
+	Queue(): Create the queue, leaving it empty
+	isEmpty(): Test whether the queue is empty or not
+	enqueue(item): Adds a new item to the rear of the queue(if it is not full)
+	dequeue(): The item from the front of the queue will be removed and returns the item, if not empty
+	returive()L Retirives the front element of queue, if not empty
+
+
