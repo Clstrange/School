@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-262.4264413518887" y="-9.473161033797211">edu.uvu.AutoPartsShippingVisitor</node>
+    <node x="-41.73359840954282" y="271.28230616302176">edu.uvu.Fender</node>
+    <node x="-63.00894632206757" y="-98.01391650099401">edu.uvu.AutoPartVisitor</node>
+    <node x="-401.50397614314096" y="271.28230616302176">edu.uvu.Wheel</node>
+    <node x="-165.11829025844935" y="193.69980119284287">edu.uvu.AutoPart</node>
+    <node x="-289.81113320079515" y="271.28230616302176">edu.uvu.PartsOrder</node>
+    <node x="-142.11829025844935" y="271.28230616302176">edu.uvu.Oil</node>
+    <node x="16.742544731610366" y="-9.473161033797211">edu.uvu.AutoPartsDisplayVisitor</node>
+    <node x="-331.46023856858847" y="-105.3300198807157">edu.uvu.VisitorDemo</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uvu.AutoPartsShippingVisitor" target="edu.uvu.AutoPartVisitor" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-143.92644135188868" y="47.68389662027835" />
+      <point x="18.491053677932427" y="47.68389662027835" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.Oil" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-107.11829025844935" y="277.45725646123253" />
+      <point x="-107.11829025844935" y="277.45725646123253" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.AutoPartsDisplayVisitor" target="edu.uvu.AutoPartVisitor" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="129.24254473161037" y="67.68389662027835" />
+      <point x="18.491053677932427" y="67.68389662027835" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.PartsOrder" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-223.81113320079515" y="246.72962226640152" />
+      <point x="-107.11829025844935" y="246.72962226640152" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.Fender" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="9.266401590457178" y="246.72962226640152" />
+      <point x="-107.11829025844935" y="246.72962226640152" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.Wheel" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-353.50397614314096" y="226.72962226640152" />
+      <point x="-107.11829025844935" y="226.72962226640152" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.3668478260869565" showDependencies="false" x="-55.26838966202786" y="61.83697813121273" />
+  <SelectedNodes>
+    <node>edu.uvu.Wheel</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-448.0" y="-353.0">edu.uvu.Fender</node>
+    <node x="-312.0" y="-353.0">edu.uvu.Oil</node>
+    <node x="-595.0" y="-473.0">edu.uvu.AutoPart</node>
+    <node x="-447.5" y="-473.0">edu.uvu.VisitorDemo</node>
+    <node x="-699.0" y="-353.0">edu.uvu.PartsOrder</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.uvu.Oil" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-277.0" y="-379.0" />
+      <point x="-537.0" y="-379.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.PartsOrder" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="58.5" y="-14.0" />
+      <point x="-37.5" y="14.0" />
+    </edge>
+    <edge source="edu.uvu.Fender" target="edu.uvu.AutoPart" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="-397.0" y="-379.0" />
+      <point x="-537.0" y="-379.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="false" x="-508.5" y="-388.99999999999994" />
+  <SelectedNodes>
+    <node>edu.uvu.PartsOrder</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
