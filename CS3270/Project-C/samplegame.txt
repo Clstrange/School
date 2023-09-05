@@ -1,0 +1,50 @@
+D:\School\CS3270\Project-C>py wordgame.py test
+Enter the range of word lengths (low,high):2,4
+sett:
+
+['---']
+['----', '----']
+Enter a guess: test
+
+
+ttse:
+
+['---']
+['----', 'test']
+Correct
+Enter a guess: set
+
+
+ttes:
+
+['set']
+['----', 'test']
+Correct
+Enter a guess: hi
+
+
+tste:
+
+['set']
+['----', 'test']
+Incorrect!
+Enter a guess: fial
+
+
+stet:
+
+['set']
+['----', 'test']
+Incorrect!
+Enter a guess: stet
+
+
+tets:
+
+['set']
+['stet', 'test']
+Correct
+You win!!!
+
+
+['set', 'stet', 'test']

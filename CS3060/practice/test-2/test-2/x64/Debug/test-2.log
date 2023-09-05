@@ -1,0 +1,13 @@
+﻿  test-2.cpp
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(6,2): error C2065: 'PROCES_INFORMATION': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(6,21): error C2146: syntax error: missing ';' before identifier 'pi'
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(6,21): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(10,14): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(10,25): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(10,2): error C3861: 'zeroMemory': identifier not found
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(13,43): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(14,3): error C3861: 'fprint': identifier not found
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(19,22): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(22,14): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(23,14): error C2065: 'pi': undeclared identifier
+D:\School\CS3060\practice\test-2\test-2\test-2.cpp(4): fatal error C1075: '{': no matching token found

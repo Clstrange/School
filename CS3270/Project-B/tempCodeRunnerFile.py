@@ -1,0 +1,5 @@
+     # query_two = {supplier.sname for supplier in database.get("Suppliers") for spj in database.get("Spjs") if (spj.spno == "p3" or spj.spno == "p5") and spj.ssno == supplier.sno}
+        # query_three = {supplier.sname for supplier in database.get("Suppliers") for spj in database.get("Spjs") if (spj.sjno != "j3" or spj.sjno != "j4") and spj.ssno == supplier.sno}
+        # query_four = {(parts.color, parts.pname) for part in database.get("Parts") for spj in database.get("Spjs") if (spj.sjno != "j6") and (spj.spno == parts.pno)}
+        # query_five = {(supplier_one.sname, supplier_two.sname) for supplier_one in suppliers for supplier_two in suppliers if (supplier_one.sno != supplier_one.sno) and (supplier_one.scity == supplier_two.scity)}
+        # query_six = {supplier.scity: [x.sname for x in database.get("Suppliers") if x.scity == supplier.scity] for supplier in database.get("Suppliers")}
