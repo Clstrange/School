@@ -1,0 +1,15 @@
+/* changes some fonts and colors */
+/* added the theme to the visitor form */
+
+body, #mainPage, #topPage, #goldWings, #goldTouch, #smokinBlack, #curlyRed, #service, #about {
+    background-color: black;
+    color: red;
+    
+}
+
+#bulletList {
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+}
+

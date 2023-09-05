@@ -1,0 +1,543 @@
+<!-- 
+    Cody Strange
+    4/8/2022
+    CS-2550-X01
+
+    Version 1 --- 4/8/2022
+        New Items:
+            Form page
+            Home buttons
+            Folders for file types
+
+        To-Do list:
+            state validation
+            zip code validation
+            email validation
+            phone validation
+            checkbox validation
+            form logo
+            media queries
+            update visuals
+            update visitor button
+            make theme button toggle
+            revamp contact page
+            update home button
+            update theme button
+
+        Summary:
+            I got the form working and while it isn't
+            much different from the example the professor provided
+            I learned a lot from it and made sure I didn't use
+            anything until I understood it. I have a lot to do, I 
+            am hoping to completely fix all of the problems for
+            the final project so that I have a product I can be
+            proud of. Currently is in a pretty sad state as
+            I have been slacking on a lot of the finer details, so
+            I have a lot of work ahead of me.
+
+    Version 2 --- 4/11/2022
+
+        Bug List:
+            Visitor Form returns to main page when it should be showing a message
+            saying you've completed the form. --Status = [Fixed]
+        
+        To-Do List:
+            zip code validation
+            email validation
+            phone validation
+            checkbox validation
+            form logo
+            media queries
+            update visuals
+            update visitor button
+            make theme button toggle
+            revamp contact page
+            update home button
+            update theme button
+        
+        Summary:
+            I spent the entire time trying to get the validation code to 
+            work when you didn't start the webpage on the form validation page.
+            I had to make it an onclick event that called the validation
+            function and make it so the validation function was the thing to 
+            change the web page.
+
+    Version 3 --- 4/12/2022
+        New items: 
+            zip code validation
+            email validation
+            phone validation
+            checkbox validation
+
+        To-Do List:
+            form logo
+            media queries
+            update visuals
+            update visitor button
+            make theme button toggle
+            revamp contact page
+            update home button
+            update theme button
+
+        Summary:
+            I got the form validation code
+            up and running at 100%. The sites functionality
+            should be fine besides the lack of toggling on the theme
+            and that it isn't responsive with media queries. I'll now
+            focus on project 6 items and if I have time left over I'll
+            go back and fix the rest of the things and make it look better
+            visually.
+        
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Feather Gate Ranch</title>
+        <link href="css/styles.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!--Main Page-->
+        <div id="mainPage">      
+            <div id="item1" >
+                <img src="img/Logo_2.png" alt="Logo_2" id="img_6">
+                <div id="item1_1">
+                    <header id="header">Feather Gate Ranch</header>
+                    <section id="bulletList">
+                        <!--Bullet list-->
+                        <ul>
+                            <li>Purebred Missouri Fox Trotters</li>
+                            <li>Hypoallergenic Curly</li>
+                            <li>Rare Coat colors</li>
+                        </ul>
+    
+                        <ul>
+                            <li>100% Smooth Gaited</li>
+                            <li>Family Friendly & Smart</li>
+                            <li>Hardy Mountain-Bred</li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- empty space -->
+                <div></div>
+            </div>
+            <div id="item2">
+                <nav>
+                    <!--Links-->
+                    <a onclick="hideMainPage('mainPage', 'about')">About the Ranch</a>
+                    <a onclick="hideMainPage('mainPage', 'service')">Stallions/Stud Service</a>
+                    <a onclick="hideMainPage('mainPage', 'horsesForSale')">Horses For Sale</a>
+                    <a onclick="hideMainPage('mainPage', 'contactUs')">Contact Us</a>
+                </nav>
+            </div>
+    
+            <div id="item3">
+                <section id="imageGallery">
+                    <!--Image Gallery-->
+                    <img src="img/horse_img_1.jpeg" alt="img_1" class="gallery" id="img_1">
+                    <img src="img/horse_img_2.jpg" alt="img_2" class="gallery" id="img_2">
+                    <img src="img/horse_img_3.jpeg" alt="img_3" class="gallery" id="img_3">
+                    <img src="img/horse_img_4.jpg" alt="img_4" class="gallery" id="img_4">
+                    <img src="img/Logo_1.png" alt="Logo_1" class="gallery" id="img_5">
+                </section>
+            </div>
+        </div>
+
+        <!--Horses For Sale Page-->
+        <div id="horsesForSale" style="display: none">
+            <section id="topPage">
+                <a  class="homeBtn" onclick="showMainPage('horsesForSale', 'mainPage')">Home</a>
+                <header>Feather Gate Ranch-Stallions</header>
+                <img  onclick="showMainPage('horsesForSale', 'mainPage')" src="img/Logo_1.png" alt="Logo_1" class="gallery" id="logo_1_1"> 
+            </section>
+            <aside>
+                Current Standing Studs; Click on their profile to see their availability, 
+                health, and color testing results
+            </aside>
+            <section id="imageGallery_2">
+                <div id="horse_1">
+                    <img src="img/horse_img_5.jpeg" alt="img_1" class="gallery" id="">
+                    <a onclick="showMainPage('horsesForSale', 'goldWings')">F.G. Gold Wings</a>
+                </div>
+
+                <div id="horse_2">
+                    <img src="img/horse_img_6.jpeg" alt="img_2" class="gallery" id="">
+                    <a onclick="showMainPage('horsesForSale', 'goldTouch')">F.G. Mitus Gold Touch</a>
+                </div>
+
+                <div id="horse_3">
+                    <img src="img/horse_img_7.jpeg" alt="img_3" class="gallery" id="">
+                    <a onclick="hideMainPage('horsesForSale', 'curlyRed')">F.G. Curly Red Pilot</a>
+                </div>
+
+                <div id="horse_4">
+                    <img src="img\horse_img_8.jpeg" alt="img_4" class="gallery" id="">
+                    <a onclick="hideMainPage('horsesForSale', 'smokinBlack')">F.G. Flint Smokin Black</a>
+                </div>
+            </section>
+        </div>
+
+        <!--Gold Wings Page-->
+        <div id="goldWings" style="display: none">
+            <!-- Row1 -->
+            <div id="goldWingsRow1">
+                <div id="row1Group1">
+                    <a  class="homeBtn" onclick="showMainPage('goldWings', 'mainPage')">Home</a>
+                    <div id="group1">
+                        <header id="goldWingsHeader">Feather Gait Gold Wings</header>
+                        <img id="goldWingsLogo" src="img/Logo_1.png">
+                    </div>
+                   
+                    <p id="goldWingsParagraph">
+                        Out Of: Special Edition N<br>By: DCC Vegas<br>2010 Stallion "Wings"
+                        is out most distinguished stallion. He has a reputable <br> show history
+                        and a stunning gait that speaks for itself. His personality is that<br>
+                        of a kind gelding, as he enjoys working and pampering by children, disabled
+                        adults,<br> and seniors alike. He is a gentle easy breeder, having
+                        all healthy foals.
+                    </p>
+                </div>
+                <img  class="goldWingsImg" id="goldWingsImg1"src="img/Wings-First_Ride_1.jpg">
+            </div>
+            
+            <!-- Row2 -->
+            <div id="goldWingsRow2">
+
+                <div>
+                    <ul id="goldWingsList">
+                        <li>Registerd with MFTHBA, ICHO, NCHR</li>
+                        <li>Dominant Curly-Heterozygous</li>
+                        <li>Amber Champagne-Heterozygous</li>
+                        <li>Tested 100% Gait</li>
+                        <li>Lots of Bone-Hardy yet Correct Conformation</li>
+                        <li>No Genetic Health issues</li>
+                    </ul>
+                    <p id="goldWingsParagraph2">
+                        He is available for live Cover and A.I Shipping,<br> Live Foal
+                        Guarantee. For prices and scheduling, <br>refer to our contacts page.
+                    </p>
+
+                </div>
+                <img  class="goldWingsImg" id="goldWingsImg2"src="img/Wings_side_1.jpg">
+                <img  class="goldWingsImg" id="goldWingsImg3"src="img/Wings_Pedigree_1.jpg">
+            </div>
+            
+        </div>
+
+        <!-- Gold Touch Page -->
+        <div id="goldTouch" style="display: none">
+            <!-- Row1 -->
+            <div id="goldTouchRow1">
+                <div id="goldTouchRow1Group1">
+                    <a  class="homeBtn" onclick="showMainPage('goldTouch', 'mainPage')">Home</a>
+                    <div id="goldTouchGroup1">
+                        <header id="goldTouchHeader">Feather Gait Mitus Gold Touch</header>
+                        <img id="goldTouchLogo" src="img/Logo_1.png">
+                    </div>
+                    <p id="goldTouchParagraph">
+                        Out Of: Love Potion #9<br>By: Feather Gate Gold Wings<br>Mitus is a jack of many
+                        trades with his many colors, and he does not lack in <br> natural gait,
+                        health, and personality. He inherited his easy-going disposition from<br>
+                        his sire, Wings, and has passed it on to multiple foals of his own as well.
+                    </p>
+                </div>
+                <img  class="goldTouchImg" id="goldTouchImg1"src="img\Mitus-still.jpg">
+            </div>
+            
+            <!-- Row2 -->
+            <div id="goldTouchRow2">
+                <div>
+                    <ul id="goldTouchList">
+                        <li>Registerd with MFTHBA, ICHO, NCHR</li>
+                        <li>Dominant Curly-Heterozygous</li>
+                        <li>Amber Champagne-Heterozygous</li>
+                        <li>Cream-Heterozygous</li>
+                        <li>Tobiano-Heterozygous</li>
+                        <li>Tested 100% Gait</li>
+                        <li>Lots of Bone-Hardy yet Correct Conformation</li>
+                        <li>No Genetic Health issues</li>
+                    </ul>
+                    <p id="goldTouchParagraph2">
+                        He is available for live Cover and A.I Shipping,<br> Live Foal
+                        Guarantee. For prices and scheduling, <br>refer to our contacts page.
+                    </p>
+                </div>
+                <img  class="goldTouchImg" id="goldTouchImg2"src="img\Mitus-running.jpg">
+                <img  class="goldTouchImg" id="goldTouchImg3"src="img\Mitus_Pedigree.jpg">
+            </div>
+        </div>
+
+        <!-- Smokin' Black -->
+        <div id="smokinBlack" style="display: none">
+            <!-- Row1 -->
+            <div id="smokinBlackRow1">
+                <div id="smokinBlackRow1Group1">
+                    <a  class="homeBtn" onclick="showMainPage('smokinBlack', 'mainPage')">Home</a>
+                    <div id="smokinBlackGroup1">
+                        <header id="smokinBlackHeader">Feather Gait Flint Smokin' Black</header>
+                        <img id="smokinBlackLogo" src="img/Logo_1.png">
+                    </div>
+                    <p id="smokinBlackParagraph">
+                        Out Of: Love Potion #9<br>By: Feather Gate Gold Wings<br>Flint is a stunning creature,
+                        with lots of natural gait and a flair of fancy. He is built for performance<br>
+                        more than versatilitym meaning he is not as stocky as his sire and brothers<br>
+                        However, he does not lack good bone density, so he will still sire hardy trail
+                        mounts and show horses alike.
+                    </p>
+                </div>
+                <img  class="smokinBlackImg" id="smokinBlackImg1"src="img\Mitus-still.jpg">
+            </div>
+            
+            <!-- Row2 -->
+            <div id="smokinBlackRow2">
+                <div>
+                    <ul id="smokinBlackList">
+                        <li>Registerd with MFTHBA, ICHO, NCHR</li>\
+                        <li>Smooth-coated Cury-Not Hypoallergenic</li>
+                        <li>Black-Heterozygous</li>
+                        <li>Cream-Heterozygous</li>
+                        <li>Tested 100% Gait</li>
+                        <li>Lots of Bone-Hardy yet Correct Conformation</li>
+                        <li>No Genetic Health issues</li>
+                    </ul>
+                    <p id="smokinBlackParagraph2">
+                        He is available for live Cover (A.I coming soon),<br> Live Foal
+                        Guarantee. For prices and scheduling, <br>refer to our contacts page.
+                    </p>
+                </div>
+                <img  class="smokinBlackImg" id="smokinBlackImg2"src="img\Mitus-running.jpg">
+                <img  class="smokinBlackImg" id="smokinBlackImg3"src="img\Mitus_Pedigree.jpg">
+            </div>
+        </div>
+
+        <!-- Curly Red -->
+        <div id="curlyRed" style="display: none">
+            <!-- Row1 -->
+            <div id="curlyRedRow1">
+                <div id="curlyRedRow1Group1">
+                    <a  class="homeBtn" onclick="showMainPage('curlyRed', 'mainPage')">Home</a>
+                    <div id="curlyRedGroup1">
+                        <header id="curlyRedHeader">Feather Gait Curly Red Pilot</header>
+                        <img id="curlyRedLogo" src="img/Logo_1.png">
+                    </div>
+                    <p id="curlyRedParagraph">
+                        Out Of: Diamond's Indi Y<br>By: Feather Gate Gold Wings<br>Pilot is a great
+                        example of traditional Missouri breeding meeting the new utah <br>
+                        versatility curly Fox Trotter. He descended closely from Zane Grey,<br>
+                        Lady, Anne, and Missour Traveller E, and Annie Lobo
+                    </p>
+                </div>
+                <img  class="curlyRedImg" id="curlyRedImg1"src="img\Mitus-still.jpg">
+            </div>
+            
+            <!-- Row2 -->
+            <div id="curlyRedRow2">
+                <div>
+                    <ul id="curlyRedList">
+                        <li>Registered with MFTHBA, ICHO</li>\
+                        <li>Dominant Cury-Likely Hypoallergenic</li>
+                        <li>Red-Heterozygous</li>
+                        <li>Tested 100% Gait</li>
+                        <li>Lots of Bone-Hardy yet Correct Conformation</li>
+                        <li>No Genetic Health issues</li>
+                        <li>Strong, Balanced Hooves</li>
+                    </ul>
+                    <p id="curlyRedParagraph2">
+                        He is available for live Cover (A.I coming soon),<br> Live Foal
+                        Guarantee. For prices and scheduling, <br>refer to our contacts page.
+                    </p>
+                </div>
+                <img  class="curlyRedImg" id="curlyRedImg2"src="img\Mitus-running.jpg">
+                <img  class="curlyRedImg" id="curlyRedImg3"src="img\Mitus_Pedigree.jpg">
+            </div>
+        </div>
+
+        <!-- Stallions/Stud Service -->
+        <div id="service" style="display: none">
+            <div id="serviceRow1">
+                <a  class="homeBtn" onclick="showMainPage('service', 'mainPage')">Home</a>
+                <div>
+                    <header>Feather Gate Ranch-Service</header>
+                    <p>How we breed our gait</p>
+                </div>
+
+                <img id="serviceLogo" src="img\Logo_1.png" alt="Error">
+            </div>
+            <div id="serviceRow2">
+                <p id="serviceParagraph">
+                    With the benefit of using easy-going stallions, we mainly breed our own
+                    mares in-hand. The mares are lightly worked during gestation, and given 
+                    necessary minerals, supplements, and fresh feed. <br><br>
+                    Foals are imprinted upon birsth, and allowed a few days to adjust and bond with their dams
+                    Halter-training is done gradually, usually through their first year, using gentle R+ methods.
+                    As a result of that, they become well-behaved youngsters that like to shove their noeses right into
+                    the halter!<br><br> Not every weaning, yearling, etc. is sold with perfect manners, but they are a perfect 
+                    template for our own training style to step in and get to work.
+                </p>
+                <img id="serviceImg1" src="img\service_horse_1.png" alt="Error!">
+            </div>
+        </div>
+
+        <!-- About -->
+        <div id="about" style="display: none">
+            <div id="aboutRow1">
+                <a  class="homeBtn" onclick="showMainPage('about', 'mainPage')">Home</a>
+                <div>
+                    <header>Feather Gate Ranch-Service</header>
+                </div>
+
+                <img id="aboutLogo" src="img\Logo_1.png" alt="Error">
+            </div>
+            <div id="aboutRow2">
+                <p id="aboutParagraph">
+                    Our stallions make up only half of the equation. Quality mares are just as essential to a 
+                    thriving breeding business, and it shows in the get<br><br>
+                    Several of the mares were purchased years ago right out 
+                    of the old foundation bloodlines in Missouri, and brought with them the 
+                    finesse and gait of their heritage.
+                    <br><br> While most are not likely to be sold, (though that may change), it is always good to see where 
+                    your prospective weanling you buy comes from. Most pictures can be found on our Facebook
+                </p>
+                <img id="aboutImg1" src="img\about_horses.jpg" alt="Error!">
+            </div>
+
+            <div id="vid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZxrEgghMA_k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- contactUs -->
+        <div id="contactUs" style="display: none">
+            <a  class="homeBtn" onclick="showMainPage('contactUs', 'mainPage')">Home</a>
+            <div id="one">
+                <p>Contact Us</p>
+                <p>if you have questions about our horses;
+                    prices, availability, hypallergenic content, gait,
+                    and color possiblilities, please visit our Facebook
+                    page! If you'd like to make an offer, send an email!
+                </p>
+            </div>
+            <div id="two">
+                <span>Where else can we be found?</span>
+                We have been featured in an article in the 2021 Spring
+                issue of the ICHO Gazette, as well as a few our our
+                stallion ads-with more to come! We have a stallion of our
+                breeding that is owned by a wonderful ranch in France,
+                and we are branching out further into gaited horse and MFT shows.
+                Check out our Facebook to watch!
+            </div>
+        </div>
+
+        <!-- visitorForm -->
+        <div id="container" style="display:none">
+            <a  onclick="showMainPage('container', 'mainPage')">Home</a>
+            <h1 class="header" >Feather Gate Ranch-Visitor Form</h1>
+            <div class="successMsg" hidden>
+                Your visit has been logged, Thank you!
+            </div>
+            <form id="myform" novalidate>
+                <ul class="flex">
+                    <li>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" 
+                            placeholder="Enter your first name here" required>
+                        <div class="errorMsg">First Name is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname"
+                            placeholder="Enter your last name here" required>
+                        <div class="errorMsg">Last Name is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" 
+                            placeholder="Enter your address here" required>
+                        <div class="errorMsg">Adresss is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city"
+                            placeholder="Enter your city here" required>
+                        <div class="errorMsg">City is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state"
+                            placeholder="Enter your state here" required>
+                        <div class="errorMsg">Valid state is required</div>    
+                    </li>
+    
+                    <li>
+                        <label for="zip">Zip</label>
+                        <input type="text" id="zip" name="zip"
+                            placeholder="Enter your zip here" required>
+                        <div class="errorMsg">Valid zipcode is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email"
+                            placeholder="Enter your email here" required>
+                        <div class="errorMsg">Valid email is required</div>
+                    </li>
+    
+                    <li>
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" name="phone"
+                        placeholder="(xxx)xxx-xxxx format" required>
+                        <div class="errorMsg">(Valid phone number is required)</div>
+                    </li>
+                </ul>
+    
+                    
+                    <h1 class="header">How did you find this page?</h1>
+                <ul class="flex">
+                    <li>
+                        <label for="Google Search">Google Search</label>
+                        <input type="checkbox" id="google" value="google">    
+                    </li>
+    
+                    <li>
+                        <label for="Friend">Friend</label>
+                        <input type="checkbox" id="Friend" value="Friend">
+                    </li>
+    
+                    <li>
+                        <label for="newspaper">Newspaper</label>
+                        <input type="checkbox" id="newspaper" value="newspaper">
+                        <div class="errorMsg">You must check at least one</div>
+                    </li>
+    
+                    <li>
+                        <label for="comments">Comments</label>
+                        <textarea rows="4" id="comments" placeholder="Enter comments here"></textarea>
+                    </li>
+    
+                    <li><button id="send" type="submit">Send</button></li>
+    
+                </ul>
+
+            </form>
+           
+
+
+            
+
+        </div>
+
+        <script type="text/javascript" src="js\main.js"></script>
+        <script type="text/javascript" src="js\validation.js"></script>
+
+    </body>
+
+</html>
