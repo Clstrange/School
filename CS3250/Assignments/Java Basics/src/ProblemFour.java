@@ -48,3 +48,4 @@ public class ProblemFour {
         return (char) codePoint;
     }
 }
+System.out.println()
