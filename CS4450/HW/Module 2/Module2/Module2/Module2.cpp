@@ -10,23 +10,42 @@ union Data {
 
 	struct
 	{
-		unsigned int code : 5;
-		int ladrm : 4;
-		int radrm : 4;
-		int si : 7;
-		int ireg : 6;
-		int rreg : 6;
 		int li : 32;
+		int rreg : 6;
+		int ireg : 6;
+		int si : 7;
+		int radrm : 4;
+		int ladrm : 4;
+		int code : 5;
 	} nestedStruct;
 };
 
 void readStuff(unsigned long long x) {
 	Data myData;
 	myData.nestedStruct.code = x;
+	myData.nestedStruct.ladrm = x;
+	myData.nestedStruct.radrm = x;
+	myData.nestedStruct.si = x;
+	myData.nestedStruct.ireg = x;
+	myData.nestedStruct.rreg = x;
+	myData.nestedStruct.li = x;
 	myData.signedInt64 = x;
 	cout << myData.signedInt64;
 	cout << endl;
 	cout << myData.nestedStruct.code;
+	cout << endl;
+	cout << myData.nestedStruct.ladrm;
+	cout << endl;
+	cout << myData.nestedStruct.radrm;
+	cout << endl;
+	cout << myData.nestedStruct.si;
+	cout << endl;
+	cout << myData.nestedStruct.ireg;
+	cout << endl;
+	cout << myData.nestedStruct.rreg;
+	cout << endl;
+	cout << myData.nestedStruct.li;
+
 }
 
 
