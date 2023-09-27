@@ -47,3 +47,6 @@ fun p x = x+1;
 
 fun f2n(f,0,x) = x
 |   f2n (f,n,x) = f2n(f, n-1, x) + f2n(f,0,x);
+
+
+fun f(x) = 1;
