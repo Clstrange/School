@@ -1,0 +1,96 @@
+---
+title: "Class Activity on Ch 2 using R"
+author: "Cody Strange"
+date: "2023-09-20"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+SS<-read.csv("SleepStudy.csv", header = T)
+head(SS)
+names(SS)
+```
+
+1.	Examine the distribution of DAS scores. 
+```{r}
+hist(SS$DASScore)
+```
+
+The DASScores distribution is skewed to the right.
+
+
+2.	Does stress level depend on the circadian preferences ( LarkOwl)? 
+```{r}
+Tab<-table(SS$LarkOwl, SS$Stress)
+Pr<-prop.table(Tab, 1)
+barplot(Pr, beside = T)
+```
+
+It seems that the sleep type is slightly related to the level of depression of a person. With being both a Lark or an Owl is associated with slightly higher levels of depression.
+
+3.	Are cognitive skills and alcohol use related? 
+```{r}
+Al <-SS$AlcoholUse
+Cog <-SS$CognitionZscore
+
+boxplot(Cog~Al, horizontal = T)
+```
+
+Yes, the cognitive skills and alcohol use seem to be related.
+
+4.	Are you a lark or an owl?
+```{r}
+Table<-table(SS$LarkOwl)
+pr<-prop.table(Table)
+pr
+barplot(pr)
+```
+
+Most students are neither Lark nor Owl
+
+5.	Calculate the z-score for DASS scores and identify outliers using based on z-scores (more than 2 or less than -2).
+```{r}
+xbar<-mean(SS$DASScore)
+s<-sd(SS$DASScore)
+z<-(SS$DASScore-xbar)/s
+z[z< -2 | z>2]
+```
+There are 11 outliers and they are all a z score greater than 2
+
+6.	Is there any effect of the DASS score on sleep quality? 
+```{r}
+plot(SS$DASScore, SS$PoorSleepQuality)
+```
+
+Yes there does seem to be an association between DASScore and sleep quality
+
+7.	Build an appropriate model to predict sleep quality in terms of the DASS scores. How good is your model? 
+
+```{r}
+model<-lm(SS$PoorSleepQuality~SS$DASScore)
+summary(model)
+```
+The model's standard error is around 2.6 so I would say that it is pretty good
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
