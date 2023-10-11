@@ -67,18 +67,13 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 	// Load server info into sockaddr_in6 
 	serverInfo.sin6_family = AF_INET6;         // address family = IPv6
 	serverInfo.sin6_port = htons(serverPort);  // convert int port to ntwk order*
+
 	// Convert cmd line server addr from char to ntwk form, load into sockaddr_in6 
 	inet_pton(AF_INET6, serverIPaddr, &serverInfo.sin6_addr);
 
 	// The DisplayFatalErr() function uses info from lpWSAData, so don’t 
 	// call it until after the Winsock DLL is loaded.
-	if (connect(sock, (struct sockaddr*)&serverInfo, sizeof(serverInfo)) < 0) {
-			DisplayFatalErr("connect() function failed.");
-	}
-		
 
-
-	// 
 	// Display helpful confirmation messages after key socket calls like this:
 	// printf("Socket created successfully.  Press any key to continue...");
 	// getchar();     // needed to hold console screen open
@@ -93,12 +88,55 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 	// Attempt connection to the server.  If it fails, call DisplayFatalErr() with appropriate message,
 	// otherwise printf() confirmation message
 
+	if (connect(sock, (struct sockaddr*)&serverInfo, sizeof(serverInfo)) < 0) {
+		DisplayFatalErr("connect() function failed.");
+	}
+
 	// Send message to server (without '\0' null terminator). Check for null msg (length=0) & verify all bytes were sent...
+	char* msg = argv[3];
+	int msgLen = strlen(msg);
 	// ...else call DisplayFatalErr() with appropriate message as before
+	
+	int index = 0;
+	do
+	{
+		int bytesSent = send(sock, &msg[index], msg - index, 0);
+		if (bytesSent == SOCKET_ERROR)
+		{
+			DisplayFatalErr("send() function failed");
+		}
+		else {
+			index += bytesSent;
+		}
+	} while (index < msgLen);
+
 
 	// Retrieve the message returned by server.  Be sure you've read the whole thing (could be multiple segments). 
+	unsigned char recvBuffer[RCVBUFSIZ] = { 0 };
+	index = 0;
+
 	// Manage receive buffer to prevent overflow with a big message.
 	// Call DisplayFatalErr() if this fails.  (Lots can go wrong here, see slides.)
+	do
+	{
+		int bytesReceived = recv(sock, &msg[index], RCVBUFSIZ - index, 0);
+		if (bytesReceived == SOCKET_ERROR)
+		{
+			DisplayFatalErr("recv() function failed");
+		}
+		else if (bytesReceived == 0) 
+		{
+			break;
+		}
+		else 
+		{
+			index += bytesReceived;
+			recvBuffer[bytesReceived] = 0;
+			printf("%s", recvBuffer);
+		}
+	} while (index < msgLen);
+
+
 
 	// Display ALL of the received message, in printable C string format.
 
