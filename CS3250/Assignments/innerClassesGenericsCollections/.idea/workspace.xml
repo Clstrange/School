@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1250d98-08a2-4bb6-bd39-679e6e0a7a96" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/innerClassesGenericsCollections.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codystrange/innerClassesGenericsCollections/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codystrange/innerClassesGenericsCollections/Library.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codystrange/innerClassesGenericsCollections/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codystrange/innerClassesGenericsCollections/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/untitled/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/untitled/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/innerClassesGenericsAndCollections.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Stack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/innerClassesGenericsCollections.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 1/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2WMWoPp9wJSUqExjEudmqTaXgIS" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -50,10 +50,9 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "CS2690",
-    "last_opened_file_path": "D:/School/CS3250/Assignments/Project 1",
+    "git-widget-placeholder": "CS3250-HW",
+    "last_opened_file_path": "B:/School/CS3250/Assignments/Project 1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696543106721</updated>
       <workItem from="1696543107800" duration="4680000" />
+      <workItem from="1696708885345" duration="489000" />
     </task>
     <servers />
   </component>
