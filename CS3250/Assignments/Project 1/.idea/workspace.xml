@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15eb0bce-8791-49aa-93e2-bca58760ec19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/innerClassesGenericsCollections.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/src/com/codystrange/innerClassesGenericsCollections/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/src/com/codystrange/innerClassesGenericsCollections/Library.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/src/com/codystrange/innerClassesGenericsCollections/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../untitled/untitled.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/untitled/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test/untitled/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../innerClassesGenericsCollections/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../innerClassesGenericsCollections/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +17,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2WMWxLlaPfAbBz4Qq0Yws9teFyJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,7 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "CS2690",
+    "git-widget-placeholder": "CS3250-project3",
     "last_opened_file_path": "D:/School/CS3250/Assignments/Project 1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -56,6 +48,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696543174202</updated>
       <workItem from="1696543175215" duration="604000" />
+      <workItem from="1697146587573" duration="610000" />
     </task>
     <servers />
   </component>
