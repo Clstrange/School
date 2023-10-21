@@ -1,20 +1,74 @@
 package com.codystrange.Project1;
 
-import java.util.ArrayList;
+import java.util.*;
 
-public class Zoo implements ZooOperations{
+public class Zoo<T extends Animal> implements ZooOperations{
     // uses an ArrayList to manage and store the collection of animals.
-    ArrayList<Animal> animalList;
-    ArrayList<Exhibit> exhibitList;
+    Set<T> animalList;
+    ArrayList<Exhibit<T>> exhibitList;
+
+    Map<Caretaker, Set<T>> animalToCaretaker;
 
     public Zoo() {
-        this.animalList = new ArrayList<Animal>();
+        this.animalList = new HashSet<T>();
+        animalToCaretaker = new HashMap<Caretaker, Set<T>>();
+    }
+
+    public void assignAnimalToCaretaker(Caretaker zk, T a) {
+        if (animalToCaretaker.containsKey(zk)) {
+            animalToCaretaker.get(zk).add(a);
+        }
+        else {
+            animalToCaretaker.put(zk,new HashSet<T>());
+        }
+    }
+
+    public void removeAnimalFromCaretaker(Caretaker zk, T a) {
+        if (animalToCaretaker.containsKey(zk)) {
+            animalToCaretaker.get(zk).remove(a);
+        }
+        else {
+            System.out.println("No animal to remove");
+        }
+    }
+
+    public Set<T> getAnimalsByCaretaker(Caretaker zk) {
+        return animalToCaretaker.get(zk);
+    }
+
+    public T getAnimalsByFilter(String filter, String search) {
+        if (filter.equals("name")) {
+            for (T animal: animalList
+                 ) {
+                if (animal.getName().equals(search)) {
+                    return animal;
+                }
+
+            }
+            System.out.println("ERROR, no animal found");
+            return null;
+        } else if (filter.equals("sound")) {
+            for (T animal: animalList
+            ) {
+                if (animal.getSound().equals(search)) {
+                    return animal;
+                }
+
+            }
+            System.out.println("ERROR, no animal found");
+            return null;
+        }
+        System.out.println("Filter options are: name, sound");
+        return null;
     }
 
     // addAnimal(Animal): adds an animal to the zoo
-    @Override
-    public void addAnimal(Animal animal) {
+    public void addAnimal(T animal) {
         this.animalList.add(animal);
+    }
+
+    public int getAnimalCount() {
+        return animalList.size();
     }
 
     // removeAnimal(name): removes an animal from the zoo based on its name
@@ -26,7 +80,7 @@ public class Zoo implements ZooOperations{
     // listAnimals(): lists all the animals currently in the zoo
     @Override
     public void listAnimal() {
-        for (Animal animal: this.animalList
+        for (T animal: this.animalList
              ) {
             System.out.println(animal.getName());
         }
@@ -34,8 +88,7 @@ public class Zoo implements ZooOperations{
     }
 
     // Methods to add, remove, and list exhibits.
-    @Override
-    public void addExhibit(Exhibit exhibit) {
+    public void addExhibit(Exhibit<T> exhibit) {
         exhibitList.add(exhibit);
     }
 
@@ -46,25 +99,25 @@ public class Zoo implements ZooOperations{
 
     @Override
     public void listExhibit() {
-        for (Exhibit exhibit: this.exhibitList
+        for (Exhibit<T> exhibit: this.exhibitList
         ) {
             System.out.println(exhibit.getName());
         }
     }
 
-    public static class Exhibit {
-        private String name;
-        private String description;
-        private final ArrayList<Animal> animals;
+    public static class Exhibit<T extends Animal> {
+        private final String name;
+        private final String description;
+        private final ArrayList<T> animals;
 
-        public Exhibit(String name, String description, ArrayList<Animal> animals) {
+        public Exhibit(String name, String description, ArrayList<T> animals) {
             this.name = name;
             this.description = description;
             this.animals = animals;
         }
 
         // Adds an animal to this exhibit.
-        public void addAnimalToExhibit(Animal animal) {
+        public void addAnimalToExhibit(T animal) {
             animals.add(animal);
         }
 
@@ -75,7 +128,7 @@ public class Zoo implements ZooOperations{
 
         // Lists all the animals in the exhibit.
         public void listAnimalsInExhibit() {
-            for (Animal animal:this.animals
+            for (T animal:this.animals
                  ) {
                 System.out.println(animal.getName());
 
