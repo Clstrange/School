@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1250d98-08a2-4bb6-bd39-679e6e0a7a96" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/innerClassesGenericsAndCollections.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Company.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Library.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/src/com/codystrange/InnerClassesGenericsAndCollections/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/innerClassesGenericsCollections.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project 1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project 1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Project 1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +41,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "CS3250-HW",
+    "git-widget-placeholder": "CS3250-project3",
     "last_opened_file_path": "B:/School/CS3250/Assignments/Project 1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -71,6 +61,7 @@
       <updated>1696543106721</updated>
       <workItem from="1696543107800" duration="4680000" />
       <workItem from="1696708885345" duration="489000" />
+      <workItem from="1697146528654" duration="594000" />
     </task>
     <servers />
   </component>

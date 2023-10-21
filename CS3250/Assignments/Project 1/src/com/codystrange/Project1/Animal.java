@@ -8,13 +8,16 @@ abstract class Animal {
     private final int age;
 
     // sound: The sound the animal makes (string)
-    private String sound;
+    private final String sound;
+
+    private final String favoriteFood;
 
     // Constructor
-    public Animal(String name, int age, String sound) {
+    public Animal(String name, int age, String sound, String favoriteFood) {
         this.name = name;
         this.age = age;
         this.sound = sound;
+        this.favoriteFood = favoriteFood;
     }
 
     // Prints the sound of the animal
@@ -32,5 +35,7 @@ abstract class Animal {
     public String getSound() {
         return this.sound;
     }
+
+    public String getFavoriteFood() {return this.favoriteFood;}
 }
 

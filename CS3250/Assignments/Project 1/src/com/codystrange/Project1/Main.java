@@ -9,10 +9,12 @@ public class Main {
         Animal test = new Dog("john", 12);
         test.displayInfo();
         test.makeSound();
-
         Caretaker test2 = new LordWoofers("Johnny");
-
         test2.describe();
+
+        test2.prepareFood("Papa Johns Pizza");
+
+        test2.feedAnimal(test);
 
     }
 }
