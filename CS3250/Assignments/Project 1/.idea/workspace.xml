@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15eb0bce-8791-49aa-93e2-bca58760ec19" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Caretaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Caretaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/Zoo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codystrange/Project1/ZooOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codystrange/Project1/ZooOperations.java" afterDir="false" />
-    </list>
+    <list default="true" id="15eb0bce-8791-49aa-93e2-bca58760ec19" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,20 +21,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CS3250-project3&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/School/CS3250/Assignments/Project 1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "CS4450-Module5",
+    "last_opened_file_path": "D:/School/CS3250/Assignments/Project 1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,6 +47,7 @@
       <workItem from="1697146587573" duration="610000" />
       <workItem from="1697399529534" duration="1823000" />
       <workItem from="1697405068323" duration="6535000" />
+      <workItem from="1698277268424" duration="206000" />
     </task>
     <servers />
   </component>
