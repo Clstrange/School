@@ -1,3 +1,7 @@
 ﻿  WSEchoServer6.c
-D:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(56,35): warning C4133: 'function': incompatible types - from 'sockaddr_in6 *' to 'const sockaddr *'
-  prog2cls.vcxproj -> D:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\x64\Debug\prog2cls.exe
+B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(56,35): warning C4133: 'function': incompatible types - from 'sockaddr_in6 *' to 'const sockaddr *'
+B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(73,51): warning C4133: 'function': incompatible types - from 'sockaddr_in6 *' to 'sockaddr *'
+B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(73,64): warning C4047: 'function': 'int *' differs in levels of indirection from 'size_t'
+B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(73,64): warning C4024: 'accept': different types for formal and actual parameter 3
+B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\prog2cls\WSEchoServer6.c(73,16): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
+  prog2cls.vcxproj -> B:\School\CS2690\Programming Assignments\ProjectTwo\prog2cls\x64\Debug\prog2cls.exe

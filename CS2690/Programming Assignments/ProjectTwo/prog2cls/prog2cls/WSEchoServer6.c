@@ -73,9 +73,23 @@ void main(int argc, char* argv[]) {
 		client_soc = accept(sock, (struct sockaddr_in6*)&serverInfo, sizeof(serverInfo));
 
 		if (client_soc < 0) {
-			fprint(stderr, "Error accpeting connection");
+			fprintf(stderr, "Error accepting connection");
 			continue;
 		}
+
+		//	9. Each time a client connects to the server in this loop, display the IP address and port
+		//	number of the client, and the server’s own port number(from the server’s
+		//		sockaddr_in6) on the server’s console
+		//Use inet_ntop() to convert an IP address from network format into a text string
+		//suitable for display(as shown above).Use ntohs() to convert a 16 - bit port number
+		//from network format back into a 16 - bit Windows integer.Verify that both port numbers
+		//are displayed as numerically correct values(not reversed).
+		char str[INET6_ADDRSTRLEN];
+		fprintf(stderr,"Server port: %d connection accepted from client IP: %s on port %d\n", serverPort, inet_ntop(AF_INET6,&serverInfo,str,INET6_ADDRSTRLEN), ntohs(serverInfo.sin6_port));
+
+		//10. From within the “forever” loop, call a function named ProcesClient() to receive the
+		//message from your client.
+
 
 	}
 }
@@ -86,24 +100,6 @@ void main(int argc, char* argv[]) {
 
 
 
-
-
-
-
-
-
-
-//	9. Each time a client connects to the server in this loop, display the IP address and port
-//	number of the client, and the server’s own port number(from the server’s
-//		sockaddr_in6) on the server’s console
-
-//Use inet_ntop() to convert an IP address from network format into a text string
-//suitable for display(as shown above).Use ntohs() to convert a 16 - bit port number
-//from network format back into a 16 - bit Windows integer.Verify that both port numbers
-//are displayed as numerically correct values(not reversed).
-
-//10. From within the “forever” loop, call a function named ProcesClient() to receive the
-//message from your client.
 
 
 
