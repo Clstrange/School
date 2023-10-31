@@ -18,9 +18,6 @@
     <ClCompile Include="..\..\..\ProjectOne\programOne\programOne\DisplayFatalErr.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ProjectOne\programOne\programOne\WSEchoClientv6.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WSEchoServer6.c">
       <Filter>Source Files</Filter>
     </ClCompile>

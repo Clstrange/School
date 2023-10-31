@@ -44,7 +44,6 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 		exit(1); // ...and terminate with abnormal termination code(1)
 	}
 
-
 	// Retrieve the command line arguments. (Sanity checks not required, but port and IP addr will need
 	// to be converted from char to int.  See slides 11-15 & 12-3 for details.)
 	char* serverIPaddr = argv[1];
@@ -100,7 +99,7 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 	int index = 0;
 	do
 	{
-		int bytesSent = send(sock, &msg[index], msg - index, 0);
+		int bytesSent = send(sock, &msg[index], msgLen - index, 0);
 		if (bytesSent == SOCKET_ERROR)
 		{
 			DisplayFatalErr("send() function failed");
@@ -110,7 +109,6 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 		}
 	} while (index < msgLen);
 
-
 	// Retrieve the message returned by server.  Be sure you've read the whole thing (could be multiple segments). 
 	unsigned char recvBuffer[RCVBUFSIZ] = { 0 };
 	index = 0;
@@ -119,7 +117,7 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 	// Call DisplayFatalErr() if this fails.  (Lots can go wrong here, see slides.)
 	do
 	{
-		int bytesReceived = recv(sock, &msg[index], RCVBUFSIZ - index, 0);
+		int bytesReceived = recv(sock, recvBuffer, RCVBUFSIZ - 1, 0);
 		if (bytesReceived == SOCKET_ERROR)
 		{
 			DisplayFatalErr("recv() function failed");
@@ -132,20 +130,20 @@ void main(int argc, char* argv[])   // argc is # of strings following command, a
 		{
 			index += bytesReceived;
 			recvBuffer[bytesReceived] = 0;
+			// Display ALL of the received message, in printable C string format.
 			printf("%s", recvBuffer);
 		}
 	} while (index < msgLen);
 
 
 
-	// Display ALL of the received message, in printable C string format.
-
-	// Close the TCP connection (send a FIN) & print appropriate message.
+	// Close the TCP connection (send a FIN)
+	if (closesocket(sock) != 0) {
+		DisplayFatalErr("closesocket() function failed.");
+	}
 
 	// Release the Winsock DLL
-
-	fprintf(stderr, "Connection established with server. Press any key to continue.");
-	getchar();
+	WSACleanup();
 
 	exit(0);
 }
