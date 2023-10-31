@@ -129,7 +129,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\ProjectOne\programOne\programOne\DisplayFatalErr.c" />
-    <ClCompile Include="..\..\..\ProjectOne\programOne\programOne\WSEchoClientv6.c" />
     <ClCompile Include="ProcessClient.c" />
     <ClCompile Include="WSEchoServer6.c" />
   </ItemGroup>

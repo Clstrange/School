@@ -1,5 +1,3 @@
 ﻿  WSEchoClientv6.c
-D:\School\CS2690\Programming Assignments\ProjectOne\programOne\programOne\WSEchoClientv6.c(103,47): warning C4047: 'function': 'int' differs in levels of indirection from 'char *'
-D:\School\CS2690\Programming Assignments\ProjectOne\programOne\programOne\WSEchoClientv6.c(103,47): warning C4024: 'send': different types for formal and actual parameter 3
-D:\School\CS2690\Programming Assignments\ProjectOne\programOne\programOne\WSEchoClientv6.c(97,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\School\CS2690\Programming Assignments\ProjectOne\programOne\programOne\WSEchoClientv6.c(96,15): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   programOne.vcxproj -> D:\School\CS2690\Programming Assignments\ProjectOne\programOne\x64\Debug\programOne.exe
