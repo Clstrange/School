@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15eb0bce-8791-49aa-93e2-bca58760ec19" name="Changes" comment="" />
+    <list default="true" id="15eb0bce-8791-49aa-93e2-bca58760ec19" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../com/codystrange/innerClassesGenericsAndCollections/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trialtowerdefense/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trialtowerdefense/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "CS4450-Module5",
+    "git-widget-placeholder": "CS3250-project4",
     "last_opened_file_path": "D:/School/CS3250/Assignments/Project 1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -48,6 +52,7 @@
       <workItem from="1697399529534" duration="1823000" />
       <workItem from="1697405068323" duration="6535000" />
       <workItem from="1698277268424" duration="206000" />
+      <workItem from="1699485695661" duration="609000" />
     </task>
     <servers />
   </component>

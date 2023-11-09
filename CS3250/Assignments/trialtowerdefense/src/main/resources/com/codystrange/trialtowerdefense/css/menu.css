@@ -1,0 +1,67 @@
+#menu {
+    -fx-background-image: url('../menu/bg.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+#menuLogo {
+    -fx-background-image: url('../menu/logo.png');
+    -fx-background-size: contain;
+
+}
+
+#menuSettingsBtn {
+    -fx-background-image: url('../menu/button_settings.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuVkBtn {
+    -fx-background-image: url('../menu/button_vk.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuGoogleBtn {
+    -fx-background-image: url('../menu/button_google.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuRegistrationBtn {
+    -fx-background-image: url('../menu/button_registration.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuPlayBtn {
+    -fx-background-image: url('../menu/button_play.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuFacebookBtn {
+    -fx-background-image: url('../menu/button__facebook.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuTwitterBtn {
+    -fx-background-image: url('../menu/button_twitter.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuSoundBtn {
+    -fx-background-image: url('../menu/button_music.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+
+#menuMusicBtn {
+    -fx-background-image: url('../menu/button_sound.png');
+    -fx-background-size: contain;
+    -fx-background-color: transparent;
+}
+

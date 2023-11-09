@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.codystrange.trialtowerdefense/com.codystrange.trialtowerdefense.HelloApplication
+                                com.codystrange.trialtowerdefense.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
