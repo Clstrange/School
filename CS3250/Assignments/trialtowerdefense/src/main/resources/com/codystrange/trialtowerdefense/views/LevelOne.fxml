@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.LineTo?>
+<?import javafx.scene.shape.MoveTo?>
+<?import javafx.scene.shape.Path?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.codystrange.trialtowerdefense.controllers.LevelOne"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="level" prefHeight="645.0" prefWidth="1055.0" stylesheets="@../css/LevelOne.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.codystrange.trialtowerdefense.controllers.LevelOneController">
+   <Path fx:id="path" opacity="0.44" stroke="black" strokeWidth="2">
+      <elements>
+         <MoveTo x="525" y="644" />
+         <LineTo x="525" y="320" />
+         <LineTo x="850" y="280" />
+         <LineTo x="850" y="100" />
+         <LineTo x="1" y="100" />
+      </elements>
+   </Path>
+   <StackPane id="stoneTower" layoutX="668.0" layoutY="175.0" prefHeight="64.0" prefWidth="64.0" stylesheets="@../css/LevelOne.css">
+      <ImageView fitHeight="100.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="BOTTOM_CENTER">
+         <StackPane.margin>
+            <Insets left="3.0" />
+         </StackPane.margin>
+         <Image url="@../assests/stone-tower-game-assets/PNG/3.png" />
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <Image url="@../assests/stone-tower-game-assets/PNG/1.png" />
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_CENTER">
+         <StackPane.margin>
+            <Insets top="9.0" />
+         </StackPane.margin>
+         <Image url="@../assests/stone-tower-game-assets/PNG/2.png" />
+      </ImageView>
+   </StackPane>
 </AnchorPane>

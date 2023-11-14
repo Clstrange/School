@@ -11,6 +11,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/codystrange/trialtowerdefense/views/Game.fxml"));
+
             Scene scene = new Scene(fxmlLoader.load(), 1055, 645);
             stage.setScene(scene);
             stage.setResizable(false);
