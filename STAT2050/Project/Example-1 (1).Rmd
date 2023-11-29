@@ -1,0 +1,54 @@
+---
+title: "Template"
+author: "Dr. Islam"
+date: "2023-04-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+X<-iris
+head(X)
+summary(X$Sepal.Length)
+```
+
+Q1. 
+Is there any significant difference in mean of sepal length and petal length at 5% level of significance?
+
+Hypothesis:
+
+$H_a:\mu_1=\mu_2$ vs $H_a:\mu_1 \ne \mu_2$
+
+The test statistic is $$t=\frac{\bar{x}_1-\bar{x_2}-0}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}$$
+
+```{r}
+boxplot(X$Sepal.Length, X$Petal.Length, horizontal = T)
+t.test(X$Sepal.Length, X$Petal.Length)
+```
+With the p-value of less than 0.05, we have strong evidence to claim that the mean length of sepal and mean length of petal are significantly different. 
+
+
+
+
+
+
+$$t=\frac{\bar{x_1}-\bar{x_2}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n2}}}$$
+
+$H_0: \mu_1=\mu_2$ vs $H_a: \mu_1 \ne \mu_2$
+
+$H_0: \mu_1=\mu_2$ vs $H_a: \mu_1 \gt \mu_2$
+
+$H_0: \mu_1=\mu_2$ vs $H_a: \mu_1 \lt \mu_2$
+
+
+$z=\frac{\hat{p_1}-\hat{p_2}}{ \sqrt{\hat{p}(1-\hat{p})(1/n_1+1/n_2)}}$
+
+$$y=\alpha+\beta x+\epsilon$$
+
+$H_0: \beta=0$ vs $H_a:\beta \ne 0$
+
+

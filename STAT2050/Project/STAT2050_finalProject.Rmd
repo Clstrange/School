@@ -1,0 +1,128 @@
+---
+title: "STAT2050 Final Project"
+author: "Cody Strange"
+date: "2023-11-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+1.	Find a 99% confidence interval for the average number of grams of fiber per day that people eat. Interpret the results.  
+
+- one quantitative variable
+- Confidence Interval = Statistic +- t*(SE) = 12.78857 +- 2.592(0.3) = (12.01,13.57)
+- Statistic = mean = 12.78857
+- df = n-1 = 314
+- t* = 2.592
+- SE = s/sqrt(n) = 5.33/sqrt(315) = 0.3
+- I am 99% confident that the true average number of grams of fiber per day that
+  people eat is 12.01-13.57.
+```{r}
+nutritionStudy<-read.csv("NutritionStudy.csv")
+statistic<-mean(nutritionStudy$Fiber)
+df<-length(nutritionStudy$Fiber)
+t.score<-qt(0.005,df,lower.tail=F)
+SE = 5.33/sqrt(315)
+CI.lower<- statistic - t.score*(SE)
+CI.upper<- statistic + t.score*(SE)
+```
+
+
+
+2.
+
+a)	Construct 95% confidence interval for the effect of gender on smoking.
+- two qualitative variables
+- Confidence Interval = Statistic +- z*(SE)
+- Statistic = (p1.hat - p2.hat)
+- p1.hat = ???
+- p2.hat = ???
+- z* = 1.96
+- SE = sqrt(p1.hat(1-p1.hat)/n1 + p2.hat(1-p2.hat)/n2) = 
+- CI = (-0.08, 0.15)
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+
+
+males <- filter(data, Sex == "Male")
+p1.hat <- mean(males$Smoke == "Yes")
+p1.hat
+n1 = nrow(males)
+
+females <- filter(data, Sex == "Female")
+p2.hat <- mean(females$Smoke == "Yes")
+p2.hat
+n2 = nrow(females)
+
+
+statistic<-p1.hat-p2.hat
+z.score<-1.96
+SE = sqrt(p1.hat*(1-p1.hat)/n1 + p2.hat*(1-p2.hat)/n2)
+CI.lower<-statistic - z.score*(SE)
+CI.upper<-statistic + z.score*(SE)
+
+CI.lower
+CI.upper
+```
+b)	 Do the sample data provide evidence that the effect of gender on smoking is statistically significant? In other words, Is there evidence of a difference in the percentage of current smokers by gender?  
+
+- No, because the confidence interval contains the null hypothesis 
+
+
+3.	Does smoking decrease beta-carotene levels in the blood (betaPlasma)? Justify your answer with confidence interval and a p-value.
+
+
+
+
+- one categorical variable, one numerical variable
+- 
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+data
+
+
+```
+
+
+4.	
+a)	Construct 90% confidence interval for the effect of sex on beta-carotene levels in the blood. 
+b)	Does sex have any significant effect on beta-carotene levels in the blood?
+
+5.	Are the amount of alcohol consumption and the age of the people significantly related?  
+
+6.	Which variables listed in the dataset are significantly related to plasma beta carotene?  
+
+7.	Is there sufficient evidence that the proportions of smoking status (prior-smoke)- Never, former and current are equal?  
+
+
+8.	Consider the following variables: fat grams consumed in a day, cholesterol consumed in mg per day, and age in years. Which of the above factors significantly affects the variable calories consumed in a day at a 5% level of significance?  
+
+
+9.	
+a)	Estimate the effect of smoking on cholesterol levels and provide a 95% confidence interval for it. 
+b)	Is the effect of smoking on cholesterol levels significant? Make your decision based on confidence interval and p-value. 
+
+10.	Do the sample data provide evidence that vitaminuse affects retinol (micronutrient in the blood) levels? Justify your answer with a p-value.  
+
+11.	Who (Man or Woman) is more likely to take a vitamin? Is there a significant association between vitaminuse and the sex of the participants?  
+
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
