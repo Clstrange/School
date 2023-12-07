@@ -1,0 +1,429 @@
+---
+title: "STAT2050 Final Project"
+author: "Cody Strange"
+date: "2023-11-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(dplyr)
+library(BHH2)
+
+data<-read.csv("NutritionStudy.csv")
+```
+```{r}
+head(data)
+```
+
+Q1. Find a 99% confidence interval for the average number of grams of fiber per day that people eat. Interpret the results.  
+
+Confidence Interval:
+
+$$\bar{x}\pm t^{\star}\cdot\frac{s}{\sqrt{n}}$$
+```{r}
+
+statistic<-mean(data$Fiber)
+df<-length(data$Fiber)
+t.score<-qt(0.005,df,lower.tail=F)
+SE = 5.33/sqrt(315)
+CI.lower<- statistic - t.score*(SE)
+CI.upper<- statistic + t.score*(SE)
+```
+
+```{r}
+CI.lower
+CI.upper
+dotPlot(data$Fiber)
+```
+
+I am 99% confident that the true average number of grams of fiber per day that 
+people eat is within the range (12.01,13.57).
+______________________________________________________________________________________________
+
+Q2a. Construct 95% confidence interval for the effect of gender on smoking.
+
+Hypothesis:
+
+$$H_0:p_1=p_2 \quad vs \quad H_a:p_1 \ne p_2$$
+
+Confidence Interval:
+
+$$(\hat{p_1}-\hat{p_2})\pm z^{\star}\cdot  \sqrt{  \frac{\hat{p_1}(1-\hat{p_1})}{n_1}+ \frac{\hat{p_2}(1-\hat{p_2})}{n_2}}$$
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+males <- filter(data, Sex == "Male")
+p1.hat <- mean(males$Smoke == "Yes")
+n1 = nrow(males)
+
+females <- filter(data, Sex == "Female")
+p2.hat <- mean(females$Smoke == "Yes")
+n2 = nrow(females)
+
+statistic<-p1.hat-p2.hat
+z.score<-1.96
+SE = sqrt(p1.hat*(1-p1.hat)/n1 + p2.hat*(1-p2.hat)/n2)
+CI.lower<-statistic - z.score*(SE)
+CI.upper<-statistic + z.score*(SE)
+
+```
+
+```{r}
+CI.lower
+CI.upper
+```
+Confidence Interval:
+
+$$(-0.08484522,0.1544423)$$
+
+I am 95% confident that the true population proportion of the effect of gender on smoking is within the confidence interval.
+______________________________________________________________________________________________
+
+
+Q2b. Do the sample data provide evidence that the effect of gender on smoking is statistically significant? In other words, Is there evidence of a difference in the percentage of current smokers by gender?  
+
+Null Hypothesis:
+
+$$H_0:\mu_1=\mu_2$$
+
+95% Confidence Interval:
+
+$$(-0.08, 0.15)$$
+
+The 95% confidence interval for the proportion difference contains the null hypothesis value of 0.
+______________________________________________________________________________________________
+
+
+Q3. Does smoking decrease beta-carotene levels in the blood (betaPlasma)? Justify your answer with confidence interval and a p-value.
+
+Hypothesis:
+
+$$H_0:\mu_1=\mu_2 \quad vs \quad H_a:\mu_1 < \mu_2$$
+Confidence Interval:
+
+$$(\bar{x_1}-\bar{x_2})\pm t^{\star}\cdot  \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}$$
+Test Statistic:
+
+$$ \frac{(\overline{x_1} - \overline{x_2}) - 0}{\sqrt{\frac{s^2_1}{n1} + \frac{s^2_1}{n1}}}  $$
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+smoke.yes<-filter(data, Smoke=="Yes")
+smoke.no<-filter(data, Smoke=="No")
+
+#Test Statistic
+xbar1 = mean(smoke.yes$BetaPlasma)
+xbar2 = mean(smoke.no$BetaPlasma)
+
+s1 = sd(smoke.yes$BetaPlasma)
+s2 = sd(smoke.no$BetaPlasma)
+
+n1 = nrow(smoke.yes)
+n2 = nrow(smoke.no)
+
+testStat<-(xbar1 - xbar2 - 0) / sqrt(s1^2/n1 + s2^2/n2)
+
+#Confidence Interval
+df<-min(n1-1,n2-1)
+CI.lower<-(xbar1-xbar2) - qt(0.95,df,lower.tail=T)* (sqrt(s1^2/n1 + s2^2/n2))
+
+CI.upper<-(xbar1-xbar2) + qt(0.95,df,lower.tail=T)* (sqrt(s1^2/n1 + s2^2/n2))
+
+
+#P-value
+p.value<-pnorm(-4.742105, lower.tail=T)
+```
+
+```{r}
+testStat
+CI.lower
+CI.upper
+p.value
+```
+Test Statistic:
+
+$$-4.742105$$
+Confidence Interval:
+
+$$(-107.5701, -51.24192)$$
+p.value:
+
+$$1.057545e-06$$
+```{r}
+boxplot(data$BetaPlasma~data$Smoke, horizontal = T)
+```
+
+With a p-value being less than 0.05, there is strong evidence that smoking decreases the beta-carotene levels in the blood. Along with the test statistic NOT being contained within the Confidence Interval.
+______________________________________________________________________________________________
+
+
+Q4a. Construct 90% confidence interval for the effect of sex on beta-carotene levels in the blood. 
+
+Hypothesis:
+
+$$H_0:\mu_1=\mu_2 \quad vs \quad H_a:\mu_1 \ne \mu_2$$
+Confidence Interval:
+
+$$(\bar{x_1}-\bar{x_2})\pm t^{\star}\cdot  \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}$$
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+# Confidence Interval
+females<-filter(data,Sex=="Female")
+xbar1<-mean(females$BetaPlasma)
+
+males<-filter(data,Sex=="Male")
+xbar2<-mean(males$BetaPlasma)
+
+stat<-xbar1 - xbar2
+
+n1<-(nrow(females)-1)
+n2<-(nrow(males)-1)
+df<-min(n1,n2)
+
+s1<-sd(females$BetaPlasma)
+s2<-sd(males$BetaPlasma)
+
+t.score<-qt(0.95,df)
+SE = sqrt(s1^2/n1 + s2^2/n2)
+
+CI.lower<- stat - t.score*(SE)
+CI.upper<- stat + t.score*(SE)
+
+```
+
+```{r}
+CI.lower
+CI.upper
+```
+Confidence Interval:
+
+$$(7.514217,87.62131)$$
+
+I am 90% sure that the true population mean is within the confidence interval.
+______________________________________________________________________________________________
+Q4b.Does sex have any significant effect on beta-carotene levels in the blood?
+
+Test Statistic:
+
+$$ \frac{(\overline{x_1} - \overline{x_2}) - 0}{\sqrt{\frac{s^2_1}{n1} + \frac{s^2_1}{n1}}}  $$
+```{r}
+testStat<-(xbar1 - xbar2 - 0) / sqrt(s1^2/n1 + s2^2/n2)
+p.value<-pnorm(testStat)
+```
+
+```{r}
+testStat
+p.value
+```
+Test Statistic:
+
+$$(-3.3363)$$
+Confidence Interval:
+
+$$(7.514217,87.62131)$$
+P-Value:
+
+$$0.0004245068$$
+```{r}
+boxplot(data$BetaPlasma~data$Sex, horizontal = T)
+```
+
+With a p-value being less than 0.05, there is strong evidence that sex effects the beta-carotene levels in the blood. Along with the test statistic NOT being contained within the Confidence Interval.
+______________________________________________________________________________________________
+
+5.	Are the amount of alcohol consumption and the age of the people significantly related? 
+
+Hypothesis:
+
+$$H_0:\rho=0 \quad vs \quad H_a:\rho \ne 0$$
+Confidence Interval:
+
+$$(\bar{x_1}-\bar{x_2})\pm t^{\star}\cdot  \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}$$
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+
+cor(data$Alcohol,data$Age)
+
+```
+Correlation:
+
+$$0.05158327$$
+```{r}
+plot(data$Alcohol~data$Age)
+```
+
+
+There is a very slight positive correlation between alcohol consumption and age
+
+______________________________________________________________________________________________
+
+
+6.	Which variables listed in the dataset are significantly related to plasma beta carotene?
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+numeric_data <- data[sapply(data, is.numeric)]
+
+correlations <- cor(numeric_data$BetaPlasma, numeric_data)
+
+significant<-(correlations > 0.5) | (correlations < -0.5)
+significant
+```
+At a (-0.5,0.5) level of significance none of the variables are significantlty related to plasma beta
+______________________________________________________________________________________________
+
+7.	Is there sufficient evidence that the proportions of smoking status (prior-smoke)- Never, former and current are equal?
+
+Hypothesis:
+
+$$H_0:p_1 - p_2 - p_3 = 0 \quad vs \quad H_a:p_1 - p_2 - p_3 \ne 0$$
+- p value = 1.78434e-14, reject null hypothesis
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+never<-filter(data, PriorSmoke=="1")
+former<-filter(data, PriorSmoke=="2")
+current<-filter(data, PriorSmoke=="3")
+
+O<-c(nrow(never),nrow(former),nrow(current))
+E<-nrow(data)*c(1/3,1/3,1/3)
+chsq<-sum((O-E)^2/E)
+
+chi_square_contributions <- (O - E)^2 / E
+chi_square_table <- data.frame(
+  Category = c("Never", "Former", "Current"),
+  Observed = O,
+  Expected = E,
+  Contribution_to_Chi_Square = chi_square_contributions
+)
+pchisq(chsq,2,lower.tail = FALSE)
+```
+P-Value:
+
+$$1.78434e-14$$
+```{r}
+chi_square_table
+```
+
+No, the p-value is less than 0 therefore there is sufficient evidence to reject the null hypothesis
+______________________________________________________________________________________________
+                                           
+Q8. Consider the following variables: fat grams consumed in a day, cholesterol consumed in mg per day, and age in years. Which of the above factors significantly affects the variable calories consumed in a day at a 5% level of significance?  
+
+```{r}
+data <- read.csv("NutritionStudy.csv")
+
+model <- lm(Calories ~ Fat + Cholesterol + Age, data=data)
+
+summary(model)
+
+```
+Fat and Cholesterol are both significant at a 5% level as both their p-values are less than 0.05.
+______________________________________________________________________________________________
+
+Q9a	Estimate the effect of smoking on cholesterol levels and provide a 95% confidence interval for it. 
+
+Confidence Interval:
+
+$$(\bar{x_1}-\bar{x_2})\pm t^{\star}\cdot  \sqrt{\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2}}$$
+- 
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+smoking.yes<-filter(data,Smoke=="Yes")
+smoking.no<-filter(data,Smoke=="No")
+
+xbar1<-mean(smoking.yes$Cholesterol)
+xbar2<-mean(smoking.no$Cholesterol)
+
+s1<-sd(smoking.yes$Cholesterol)
+s2<-sd(smoking.no$Cholesterol)
+
+n1<-nrow(smoking.yes)
+n2<-nrow(smoking.no)
+
+stat<-(xbar1-xbar2)
+df<-min(n1-1,n2-1)
+
+t.score<-qt(0.05,df,lower.tail=F)
+
+CI.lower<-stat - t.score * (sqrt(s1^2/n1 + s2^2/n2))
+CI.upper<-stat + t.score * (sqrt(s1^2/n1 + s2^2/n2))
+
+
+```
+```{r}
+CI.lower
+CI.upper
+```
+Confidence Interval:
+
+$$(-4.87,74.51)$$
+We are 95% sure that the true population mean is within the Confidence interval and smoking increases cholesterol levels by 34.83
+______________________________________________________________________________________________
+
+
+Q9b. Is the effect of smoking on cholesterol levels significant? Make your decision based on confidence interval and p-value. 
+```{r}
+# pvalue
+pnorm(stat/sqrt(s1^2/n1 + s2^2/n2), lower.tail=F)*2
+
+```
+P-Value:
+
+$$0.139918$$
+
+```{r}
+boxplot(data$Cholesterol~data$Smoke, horizontal = T)
+```
+The p-value is greater than 0.05 therefore the effect of smoking on cholesterol levels is not significant.
+______________________________________________________________________________________________
+
+10.	Do the sample data provide evidence that vitamin use affects retinol (micro nutrient in the blood) levels? Justify your answer with a p-value.  
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+model1<-lm(RetinolPlasma~VitaminUse, data=data)
+summary(model1)
+anova(model1)
+
+```
+P-Value (Occasional):
+
+$$0.953$$
+P-Value (Occasional):
+$$0.52$$
+
+```{r}
+boxplot(data$RetinolPlasma~data$VitaminUse, horizontal = T)
+```
+Both p-values were far greater than 0.05 therefore no there is no evidence that vitamn use effects retinol levels
+______________________________________________________________________________________________
+
+11.	Who (Man or Woman) is more likely to take a vitamin? Is there a significant association between vitaminuse and the sex of the participants?  
+
+```{r}
+data<-read.csv("NutritionStudy.csv")
+
+
+chisq.test(data$Sex, data$VitaminUse, correct=FALSE)
+Tab<-table(data$Sex, data$VitaminUse)
+prop<-prop.table(Tab, 1)
+barplot(prop, beside=TRUE)
+chisq.test(Tab, correct=TRUE)
+
+```
+
+There is no significant association between vitamin use and the sex of the participants as the p-value is less than 0.05
+
