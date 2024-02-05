@@ -362,7 +362,7 @@ def main():
     K2 = "5B5A57676A56676E"
 
     des = DES()
-    cipher_text = des.run(M1,K1)
+    cipher_text = des.run(M2,K2)
     print(cipher_text)
 if __name__ == '__main__':
     main()
