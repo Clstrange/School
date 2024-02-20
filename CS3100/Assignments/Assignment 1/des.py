@@ -86,11 +86,13 @@ class DES:
                 rotated_key = self.rotate_key_bits_1(rotated_key)
                 k = self.key_permutation_2(rotated_key)
                 f = self.f_function(right2,k)
+
+
                 right1 = self.xor_hex(left2, f)
                 left1 = right2
 
                 right2 = right1
-                left2= left1
+                left2 = left1
 
             else:
                 rotated_key = self.rotate_key_bits_2(rotated_key)
@@ -344,15 +346,12 @@ class DES:
         inputs: str, str
         output: str
         """
+        print(plain_text)
         ip = self.initial_permutation(plain_text)
-        # print(ip)
+        print(ip)
         k = self.key_permutation_1(key).zfill(14)
-
         rnds = self.rounds(ip,k)
-
-        print(rnds)
         fp = self.final_permutation(rnds)
-        print(fp)
         return fp
 
 def main():
@@ -364,6 +363,5 @@ def main():
 
     des = DES()
     cipher_text = des.run(M2,K2)
-    print(cipher_text)
 if __name__ == '__main__':
     main()

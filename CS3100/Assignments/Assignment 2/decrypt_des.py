@@ -1,5 +1,19 @@
-class DESdecrypt:
+class DES:
 
+    def final_permutation(self, plain_text):
+        """
+        inputs: str
+        output: str
+        """
+        table = [40, 8, 48, 16, 56, 24, 64, 32,
+            39, 7, 47, 15, 55, 23, 63, 31,
+            38, 6, 46, 14, 54, 22, 62, 30,
+            37, 5, 45, 13, 53, 21, 61, 29,
+            36, 4, 44, 12, 52, 20, 60, 28,
+            35, 3, 43, 11, 51, 19, 59, 27,
+            34, 2, 42, 10, 50, 18, 58, 26,
+            33, 1, 41, 9,  49, 17, 57, 25]
+        return self.r_permutation(plain_text, table, 64)
 
     def key_permutation_2(self, key):
         """
@@ -34,7 +48,7 @@ class DESdecrypt:
         hex_str = self.binary_to_hex(rotated_binary_value,14)
 
         return hex_str
-    
+      
     def rotate_key_bits_2(self, key):
         """
         inputs: str
@@ -55,40 +69,43 @@ class DESdecrypt:
 
         return hex_str
 
-    def rounds(self, plain_text, key, i=1):
+    def rounds(self, plain_text, key):
         """
         inputs: str, str, int
         output: str
         """
-        left1 = plain_text[:8]
-        right1 = plain_text[8:]
+        left1 = plain_text[8:]
+        right1 = plain_text[:8]
 
         left2 = left1
         right2 = right1
-        rotated_key = key
+        key_list = self.key(key)
 
-        for i in range(1,17):
+        for i in range(16, 0, -1):
+                f = self.f_function(left1,key_list[i-1])
+                # right1 = self.xor_hex(left2, f)
+                # left1 = right2
+
+                left1 = self.xor_hex(right2, f)
+                right1 = left2
+
+                right2 = right1.zfill(8)
+                left2 = left1.zfill(8)
+        return left2 + right2
+
+    def key(self, key):
+        key_list = []
+        rotated_key = key
+        for i in range(1, 17):
             if i in (1,2,9,16):
                 rotated_key = self.rotate_key_bits_1(rotated_key)
                 k = self.key_permutation_2(rotated_key)
-                f = self.f_function(right2,k)
-                right1 = self.xor_hex(left2, f)
-                left1 = right2
-
-                right2 = right1
-                left2= left1
-
             else:
                 rotated_key = self.rotate_key_bits_2(rotated_key)
                 k = self.key_permutation_2(rotated_key)
-                f = self.f_function(right2,k)
-                right1 = self.xor_hex(left2, f)
-                left1 = right2
+            key_list.append(k)
+        return key_list
 
-                right2 = right1
-                left2= left1
-        return right2 + left2
-    
     def xor_hex(self, hex_value_1, hex_value_2):
         """
         inputs: str, str
@@ -281,46 +298,6 @@ class DESdecrypt:
         rotated_binary_str = ''.join(binary_list)
         
         return rotated_binary_str
-      
-    def run(self, cipher_text, key):
-        """
-        inputs: str, str
-        output: str
-        """
-        # ip = self.initial_permutation(plain_text)
-
-        # k = self.key_permutation_1(key).zfill(14)
-
-        # rnds = self.rounds(ip,k)
-
-        # fp = self.final_permutation(rnds)
-
-        # return fp
-
-        self.r_final_permutation(cipher_text)
-        
-
-
-# Passed
-    def reverse_permutation(self, cipher_text, table, bit_size, ):
-        """
-        inputs: str, int list, int
-        output: str
-        """
-        plain_text = [0]*len(table)
-
-        binary_value = self.hex_to_binary(cipher_text, bit_size) # make it 64bit
-        i = 0
-        for num in table:
-            plain_text[num-1] = binary_value[i]
-            i += 1
-
-        binary_string = ''.join(str(bit) for bit in plain_text)
-
-        print(len(binary_string))
-
-        hex_value = self.binary_to_hex(binary_string, int(len(table)/4))
-        return hex_value
     
     def hex_to_binary(self, hex_str, bit):
         """
@@ -340,50 +317,68 @@ class DESdecrypt:
         int_value = int(binary_string, 2)
         hex_value = hex(int_value)[2:].zfill(bit)
         return hex_value
- 
-    def r_initial_permutation(self, cipher_text):
+      
+    def r_permutation(self, plain_text, table, bit_size):
+        """
+        inputs: str, int list, int
+        output: str
+        """
+        cipher_text = [0]*bit_size
+
+        binary_value = self.hex_to_binary(plain_text, bit_size) # make it 64bit
+        for i in range(len(table)):
+            cipher_text[int(table[i]) - 1] = binary_value[i]
+
+        binary_string = ''.join(str(bit) for bit in cipher_text)
+
+        hex_value = self.binary_to_hex(binary_string, int(len(table)/4))
+        return hex_value
+
+    def permutation(self, plain_text, table, bit_size, ):
+        """
+        inputs: str, int list, int
+        output: str
+        """
+        cipher_text = []
+
+        binary_value = self.hex_to_binary(plain_text, bit_size) # make it 64bit
+        for i in range(len(table)):
+            cipher_text.append(binary_value[table[i]-1])
+
+        binary_string = ''.join(str(bit) for bit in cipher_text)
+
+        hex_value = self.binary_to_hex(binary_string, int(len(table)/4))
+        return hex_value
+
+    def initial_permutation(self, plain_text):
         """
         inputs: str
         output: str
         """
         table = [58,50,42,34,26,18,10,2,60,52,44,36,28,20,12,4,62,54,46,38,30,22,14,6,64,56,48,40,32,24,16,8,57,49,41,33,25,17,9,1,59,51,43,35,27,19,11,3,61,53,45,37,29,21,13,5,63,55,47,39,31,23,15,7]
-        return self.reverse_permutation(cipher_text, table, 64)
- 
-    def r_final_permutation(self, cipher_text):
+        return self.r_permutation(plain_text, table, 64)
+
+    def run(self, plain_text, key):
         """
-        inputs: str
+        inputs: str, str
         output: str
         """
-        table = [40, 8, 48, 16, 56, 24, 64, 32,
-            39, 7, 47, 15, 55, 23, 63, 31,
-            38, 6, 46, 14, 54, 22, 62, 30,
-            37, 5, 45, 13, 53, 21, 61, 29,
-            36, 4, 44, 12, 52, 20, 60, 28,
-            35, 3, 43, 11, 51, 19, 59, 27,
-            34, 2, 42, 10, 50, 18, 58, 26,
-            33, 1, 41, 9,  49, 17, 57, 25]
-        
-        return self.reverse_permutation(cipher_text, table, 64)
+        fp = self.final_permutation(plain_text)
+        k = self.key_permutation_1(key).zfill(14)
+        rnds = self.rounds(fp,k)
 
+        ip = self.initial_permutation("ffb2194d004df6fb")
+        return ip
 
 def main():
     M1 = "0123456789ABCDEF"
     K1 = "133457799BBCDFF1"
 
-    M2 = "675A69675E5A6B5A"
+    M2 = "974affbf86022d1f"
     K2 = "5B5A57676A56676E"
 
-    des = DESdecrypt()
-    # cipher_text = des.run(M2,K2)
-    table = [40, 8, 48, 16, 56, 24, 64, 32,
-            39, 7, 47, 15, 55, 23, 63, 31,
-            38, 6, 46, 14, 54, 22, 62, 30,
-            37, 5, 45, 13, 53, 21, 61, 29,
-            36, 4, 44, 12, 52, 20, 60, 28,
-            35, 3, 43, 11, 51, 19, 59, 27,
-            34, 2, 42, 10, 50, 18, 58, 26,
-            33, 1, 41, 9,  49, 17, 57, 25]
-    
-    print(des.reverse_permutation('974affbf86022d1f', table, 64))
+    des = DES()
+    cipher_text = des.run(M2,K2)
+    print(cipher_text)
 if __name__ == '__main__':
     main()
