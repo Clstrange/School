@@ -346,9 +346,7 @@ class DES:
         inputs: str, str
         output: str
         """
-        print(plain_text)
         ip = self.initial_permutation(plain_text)
-        print(ip)
         k = self.key_permutation_1(key).zfill(14)
         rnds = self.rounds(ip,k)
         fp = self.final_permutation(rnds)
@@ -362,6 +360,7 @@ def main():
     K2 = "5B5A57676A56676E"
 
     des = DES()
-    cipher_text = des.run(M2,K2)
+    cipher_text = des.run(M1,K1)
+    print(cipher_text)
 if __name__ == '__main__':
     main()

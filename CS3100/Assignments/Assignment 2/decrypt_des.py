@@ -367,11 +367,11 @@ class DES:
         k = self.key_permutation_1(key).zfill(14)
         rnds = self.rounds(fp,k)
 
-        ip = self.initial_permutation("ffb2194d004df6fb")
+        ip = self.initial_permutation(rnds)
         return ip
 
 def main():
-    M1 = "0123456789ABCDEF"
+    M1 = "85e813540f0ab405"
     K1 = "133457799BBCDFF1"
 
     M2 = "974affbf86022d1f"
