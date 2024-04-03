@@ -1,0 +1,31 @@
+1.) Many fields can be left blank. From my testing, most of the fields
+that are still required on the add new employee don't necessarily need
+to be filled out just yet. An employee may not have an office phone 
+set up yet, not have bank info yet, not have been given a title, etc.
+2.) Certain fields like pay method, classification, and permission level
+would be more user friendly and easily validated with dropdowns.
+3.) Pop-up at bottom of screen that says not all fields are valid
+probably would be more visable at the top.
+4.) The alerts under each field that is required or needs attention
+after validation should be styled red.
+5.) If we deactive an employee, there should be a way to reactivate 
+them as well.
+6.) We may want to section off our view window from our nav bar on the 
+left. Help to be more user friendly and guide the eyes of the user
+better.
+--------------------------------
+|  Nav  |          View        |
+|       |                      |
+|       |                      |
+|       |                      |
+|       |                      |
+|       |                      |
+--------------------------------
+
+7.) Add a search list that can be dynamically filtered by the search
+keys entered into the search bar. 
+8.) We need to develop a read me txt file for the program.
+9.) Have a filter for the pay type classification so that you cannot
+enter the other pay type fields to avoid messing up payroll.
+10.) Create notifications of some sort to let the user know that they 
+had successfully processes timecards, receipts, and printed out payroll.

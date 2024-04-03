@@ -1,0 +1,77 @@
+[
+    {
+        "id": 7,
+        "emp_id": "3",
+        "amount": 150
+    },
+    {
+        "id": 8,
+        "emp_id": "3",
+        "amount": 200
+    },
+    {
+        "id": 9,
+        "emp_id": "3",
+        "amount": 300
+    },
+    {
+        "id": 10,
+        "emp_id": "3",
+        "amount": 450
+    },
+    {
+        "id": 11,
+        "emp_id": "3",
+        "amount": 476
+    },
+    {
+        "id": 12,
+        "emp_id": "3",
+        "amount": 488
+    },
+    {
+        "id": 13,
+        "emp_id": "3",
+        "amount": 501
+    },
+    {
+        "id": 14,
+        "emp_id": "8",
+        "amount": 125
+    },
+    {
+        "id": 15,
+        "emp_id": "8",
+        "amount": 450
+    },
+    {
+        "id": 16,
+        "emp_id": "8",
+        "amount": 701
+    },
+    {
+        "id": 17,
+        "emp_id": "8",
+        "amount": 330
+    },
+    {
+        "id": 18,
+        "emp_id": "3",
+        "amount": 500
+    },
+    {
+        "id": 19,
+        "emp_id": "2",
+        "amount": 564546
+    },
+    {
+        "id": 20,
+        "emp_id": "2",
+        "amount": 2
+    },
+    {
+        "id": 21,
+        "emp_id": "2",
+        "amount": 145245
+    }
+]

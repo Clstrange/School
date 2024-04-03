@@ -1,0 +1,75 @@
+Sprint four tasks and time estimation
+
+Bug estimation(task)
+Details: research code coverage, Lincoln index
+date start estimation: Thursday
+date end estimation: Saturday
+
+Usability test document (task)
+Details: Waiting on usability tests to be created/ran
+date start estimation: Thursday
+date end estimation: Saturday
+
+Work Breakdown Structure
+Details: Update the work breakdown structure for sprint four
+date start estimation: Friday
+date end estimation: Friday
+
+Update Change Control Board
+Details: waiting on change order requests, waiting on meeting with proffessor
+date start estimation: Wednesday
+date end estimation: Saturday
+
+Change order form updates
+Details: fill out change order forms that have been approved by professor, need to discuss with Ethan because I don't know how anything will be done
+date start estimation: Wednesday
+date end estimation: Thursday
+
+SPR-4 Risk Management Plan
+Details: create a new risk management plan for sprint four
+date start estimation: Wednesday
+date end estimation: Wednesday
+
+Maintenance Plan
+Details: update maintance plan for sprint four
+date start estimation: Wednesday
+date end estimation: Wednesday
+
+Create Class test documents
+Details: create new documents for each page test, waiting on new page tests
+date start estimation: Thursday
+date end estimation: Monday
+
+Bug tracking report
+Details: update the bug tracking report for each bug task in backlog, waiting on bug tasks to be created in backlog
+date start estimation: Thursday
+date end estimation: Monday
+
+Update SPR-4 Document
+Details: copy and paste documents and info gathered from all team members, waiting on copy and paste documents and information from team members
+date start estimation: Saturday
+date end estimation: Monday
+
+Bug Management Plan
+Details: More research needs to be done for specifics
+date start estimation: Thursday
+date end estimation: Saturday
+
+Deployment Plan
+Details: more research needs to be done for specifics
+date start estimation: Thursday
+date end estimation Saturday
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 

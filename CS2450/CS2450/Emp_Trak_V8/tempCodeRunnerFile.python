@@ -1,0 +1,14 @@
+
+def is_power(a,b):
+    print("test1: ", int(b/a))
+    if int(b/a) == 1:
+        return True
+    elif b/a < 1:
+        return False
+    print("test2: ", b/a)
+    is_power(a,b/a)
+  
+print(is_power(3,9))
+
+print(9/3)
+

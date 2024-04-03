@@ -1,0 +1,102 @@
+This text file holds the pseudo code logic for interactions with csv files that 
+read and write based upon employee lists. Employees can be written to a csv file from 
+the database and they can be read in from a csv file and in a different module,
+saved into the database. This follows a strict format and would need alterations or 
+additional functions to accommodate different formats and data types.
+
+1. Import Csv library
+2. Import the DB_Access_Module
+
+Pseudo code for a function that will read in a csv file and create a list based upon the 
+first rows columns as keys and each following rows of data as values. It then returns the
+list created.
+3. Define read_from_csv function with a csv_path parameter.
+4.     Declare an empty emps_from_csv list.
+5.     Declare an empty reader_list list.
+6.     Open csv file with csv_path in reading mode with loop as emps.
+7.     Declare a variable named reader and set it equal to csv reader of emps.
+8.     For each row in the reader, append them to reader_list.
+9.     Declare csv_keys as the first element in reader_list.
+10.    Loop through each reader_list element except for the first one.
+11.       Declare and define temp_dict as a dict that zips up the current reader_list element 
+          with the csv_keys.
+12.       Append temp_dict to emps_from_csv. 
+13.    Return emps_from_csv.    
+
+Pseudo code for a function that writes the current employee database to a csv file. It reads
+in the employees as a list of dictionaries(employee's) from the database. The keys of each 
+dictionary will be used as the first row columns. The following rows will be filled with the 
+unique pair values of each dictionary in the employee list.
+14. Define emps_to_csv function with csv_file_name as a parameter.
+15.     Declare emp_database and set it to current path to employees database json file.
+16.     Declare emps and set it as the list that's returned from get_json() function that 
+        uses emp_database as an argument.
+17.     Declare file and assign it to an open file with csv_file_name as name, and write as open type.
+18.     Declare write and assign it to csv write for the file variable.
+19.     Write a row in write of the first element of employees which will just assign keys.
+20.     Loop through each employee as emp in emps.
+21.         Declare row and assign to empty list.
+22.         Loop through each key value pair in emp as key and value.
+23.             Append a the value of the given pair as a string to row.
+24.         Write a row in write of the row list.
+25.     Close the file.
+
+This pseudo code is for a function that will write each of the employees timecards to a csv file.
+It will read the timecards as a list of dictionaries from the database. Each dictionary will be 
+an employees time clocked in a day with their id. The function will organize each employees timecards
+and assemble them into a new list that will then have each element written to a csv file as a row.
+26. Define timecards_to_csv function with csv_file_name as parameter.
+27.     Declare timecards_datatbase and set it to current path to timecards database json file.
+28.     Declare timecards and set it as the list that's returned from get_json() function that 
+        uses timecards_database as an argument.
+29.     Declare timecard_rows and set it to an empty list.
+30.     Loop through each of the timecards as tc.
+31.         Declare matched_row as a loop boolean indicator of finding a match and set it to false.
+32.         If length of timecard_rows is greater than one,
+33.             then loop through each timecard_rows as row.
+34.                 If the row id is equal to the tc's employee id,
+35.                     then append the current tc's time to the row vals list.
+36.                     Set matched_row equal to true.
+37.                    Break out of the lower loop.
+38.         If there was no matched row(matched_row is false),
+39.             then append a new dictionary to timecard_rows with 'id' as the current tc's emp_id 
+                and vals as a list with the first element as the current tc's time.
+40.     After loop is done, declare file and set it to an open file with with csv_file_name as name, and 
+        write as open type.
+41.     Declare write and set it to csv write for the file variable.
+42.     Loop through each timecard_rows as row.
+43.         Declare new_row and set it to a list with the current row's id casted into a string.
+44.         Loop through each value in the current rows vals.
+45.             Append each val casted into a string to the new_row list.
+46.         Write the new_row list with the write variable.
+47.     After loop is done, close the file.
+
+This pseudo code is for a function that will write each of the employees receipts to a csv file.
+It will read the receiptss as a list of dictionaries from the database. Each dictionary will be 
+an a dollar value tied with the employees id id. The function will organize each employees receipts
+and assemble them into a new list that will then have each element written to a csv file as a row.
+48.     Define receipts_to_csv function with csv_file_name as parameter.
+49.     Declare receipts_datatbase and set it to current path to receipts database json file.
+50.     Declare receipts and set it as the list that's returned from get_json() function that 
+        uses receipts_database as an argument.
+51.     Declare receipt_rows and set it to an empty list.
+52.     Loop through each of the receipts as rc.
+53.         Declare matched_row as a loop boolean indicator of finding a match and set it to false.
+54.         If length of receipt_rows is greater than one,
+55.             then loop through each receipt_rows as row.
+56.                 If the row id is equal to the rc's employee id,
+57.                     then append the current rc's receipt val to the row vals list.
+58.                     Set matched_row equal to true.
+59.                     Break out of the lower loop.
+60.         If there was no matched row(matched_row is false),
+61.             then append a new dictionary to receipt_rows with 'id' as the current rc's emp_id 
+                and vals as a list with the first element as the current rc's receipt val.
+62.     After loop is done, declare file and set it to an open file with with csv_file_name as name, and 
+63.     write as open type.
+64.     Declare write and set it to csv write for the file variable.
+65.     Loop through each receipt_rows as row.
+66.         Declare new_row and set it to a list with the current row's id casted into a string.
+67.         Loop through each value in the current rows vals.
+68.             Append each val casted into a string to the new_row list.
+69.         Write the new_row list with the write variable.
+70.     After loop is done, close the file.

@@ -1,0 +1,110 @@
+      This text file holds the pseudo code logic for interactions that will take place
+      between the user interface and the database. This includes the ability to Create, 
+      Read, Update, and Destroy(Archive) data in an employee database. 
+
+1.    Import Json library
+2.    
+3.    Declare database_path and initialize it appropriately.	 
+4.    Declare filter_options as empty dictionary. 
+5.	 
+
+      Pseudo code for a function that will store an object to a json text file.
+      Will be used to store our final list of employees into a json text database.
+6.    Define store_json function with a list parameter named data. 
+7.	 Declare json_obj variable as a "json.dumps" method with data as first parameter and indent set to four as second parameter.
+8.	 Declare file variable as an "open" method with database_path and a "w" for write as parameters.
+9.	 Write to file with the json_obj as parameter.
+10.	 Close file.
+11.	 
+
+      Pseudo code for a function that retrieves data from a json text file and 
+      parses it into a list of employee dictionaries that is then returned.
+12.   Define get_json function.	 
+13.	 Declare an empty emp_table list.
+14.	 Declare an empty emps list.
+15.	 Open Database file with database_path as read.
+16.	 Set emp_table to file read.
+17.	 Parse Json emp_table into emps.
+18.	 Close file.
+19.	 Return emps.
+20.	 
+
+      Pseudo code for a function that loops through a list of employees supplied by
+      the get_json function. The function compares a given string to a given field
+      that is specified as a filter, with each employee in the list and returns the 
+      first new employee found matching the criteria.   
+21.   Define search_database with args as parameter. 
+22.      Declare emps and set it result of get_json.
+23.	 Declare column and set it to search_filter radio button widget value.
+24.      Declare search_data and initialize to search_value input widget value.
+25.      Loop through each of the emps as emp and compare each emp's specified column for the search value given.
+26.      If the value given matches the value in the column of the current employee being observed,
+         create a new Employee class object from the data in the the employee dictionary.
+27.         Return the new Employee object.
+28.      Else, continue the loop through employees.
+29.         If employee is never found, return that the employee was not found. 
+30.
+
+      Pseudo code for a function that creates a dictionary based on all the data members
+      in a given Employee class object. It appends it to a list given through the get_json
+      function and saves the list to the database through the store_json function.
+31.   Define create_employee with emp_object from Employee class as parameter.
+32.      Declare emps and set it to result of get_json function.
+33.      Declare new_emp dictionary with 
+34.	    "id" as the length of emps plus one,
+35.	    "first_name" as emp_object's first name data member, 
+36.	    "last_name" as emp_object's last name data member,
+37.	    "street_address" as emp_object's street address data member,
+38.	    "city" as emp_object's city data member,
+39.	    "state" as emp_object's state data member,
+40.	    "zip" as emp_object's zip data member,
+41.	    "office_phone" as emp_object's office phone data member,
+42.	    "pay_type" as emp_object's pay type data member,
+43.	    "date_of_birth" as emp_object's date of birth data member,
+44.	    "social_security_number" as emp_object's social security number data member,
+45.	    "start_date" as emp_object's start date data member,
+46.	    "bank_routing_num" as emp_object's bank routing number data member,
+47.	    "bank_account_num" as emp_object's bank account number data member,
+48.	    "permission_id" as emp_object's permission id data member,
+49.	    "title" as emp_object's title data member,
+50.	    "department" as emp_object's department data member,
+51.	    "office_email" as emp_object's office email data member,
+52.	    "personal_email" as emp_object's personal email data member.
+53.      Substitute any empty fields with empty strings.
+54.      Append new_emp to emps list.
+55.      Call store_json function and pass in emps as argument.
+56.
+
+      Pseudo code for a function that loops through the employee list given by the get_json
+      function. When one of the list dictionary's match the given Employee class object id
+      data member, it will edit this dictionary with the given object data members and then
+      saves it to the database through the store_json function. This will be used to both edit
+      and archive the employee.
+57.   Define update_employee with emp_object from Employee class as parameter.
+58.      Declare emps and set it to result of get_json function.
+59.      Loop through each of the emps as emp.
+60.         If the id of the emp matches the id of the emp_object then
+61.	       set emp's "first_name" as emp_object's first name data member,
+62.	       set emp's "last_name" as emp_object's last name data member,
+63.	       set emp's "street_address" as emp_object's street address data member,
+64.	       set emp's "city" as emp_object's city data member,
+65.	       set emp's "state" as emp_object's state data member,
+66.	       set emp's "zip" as emp_object's zip data member,
+67.	       set emp's "office_phone" as emp_object's office phone data member,
+68.	       set emp's "pay_type" as emp_object's pay type data member,
+69.	       set emp's "date_of_birth" as emp_object's date of birth data member,
+70.	       set emp's "social_security_number" as emp_object's social security number data member,
+71.	       set emp's "start_date" as emp_object's start date data member,
+72.	       set emp's "bank_routing_num" as emp_object's bank routing number data member,
+73.	       set emp's "bank_account_num" as emp_object's bank account number data member,
+74.	       set emp's "permission_id" as emp_object's permission id data member,
+75.	       set emp's "title" as emp_object's title data member,
+76.	       set emp's "department" as emp_object's department data member,
+77.	       set emp's "office_email" as emp_object's office email data member,
+78.	       set emp's"personal_email" as emp_object's personal email data member.
+79.            Break loop.
+80.      Call store_json function and pass in emps as argument.
+81.
+
+
+

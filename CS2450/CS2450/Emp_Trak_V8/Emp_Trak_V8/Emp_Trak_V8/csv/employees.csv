@@ -1,0 +1,10 @@
+id,first_name,last_name,address,city,state,zip,classification,pay_method,salary,commission,hourly,routing_num,account_num,office_phone,personal_phone,office_email,personal_email,dob,ssn,admin,title,dept,start,end,status,password
+1,Test,Qwert,Street,City,5555,Zip,3,1,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,True,Master Manager,Managing Dept,1/1/22,None,True,test
+2,Jaden,Albrecht,Street,City,State,Zip,1,1,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,False,Master Manager,Managing Dept,1/1/22,None,True,test
+3,Cody,Strange,Street,City,State,Zip,2,2,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,False,Super Scribe,Writing Dept,1/1/22,None,True,test
+4,Tyler,Deschamps,Street,City,State,Zip,3,1,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,False,Chart Champion,Documenting Dept,1/1/22,None,True,test
+5,Jordan,Van Patten,Street,City,State,Zip,1,2,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,False,Triumphant Tester,Testing Dept,1/1/22,None,True,test
+6,Ethan,Taylor,Street,City,State,Zip,2,1,100.0,10.0,1.0,Routing Num,Account Num,Office Num,Personal Phone,Office Email,Personal Email,Birthday,SSN,True,GUI Guy,GUI Dept,1/1/22,None,True,test
+7,Jane,Doe,1650,adf sd,dafs sd,1800,3,1,25.0,50.0,110.0,,,8009001000,465465,adsfasdf ,adsf asdf sadf,,,False,,,03/15/2022,03/17/2022,False,
+8,John,Shmith,adf sadf ,asdf asd f,sadf asd f,80808,2,,1.0,10.0,100.0,,,,,,,,,,,,03/16/2022,None,True,test
+9,Testing,Nine,asdf,sdfaf,asdf,80150,1,2,1.0,10.0,100.0,asdf,asdf,1234321,asdf,adsf ,asdf,asdf,asdf,True,asdf,asdf,03/17/2022,None,True,150000asdf
